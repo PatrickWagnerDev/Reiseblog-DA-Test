@@ -22,6 +22,7 @@
             --color-palette-4: #EE964B;
             --color-palette-5: #F95738;
 
+            --color-brand-primary: var(--color-palette-1);
             --color-brand-accent: var(--color-palette-5);
             --color-bg-page: var(--color-palette-2);
             --color-bg-main: #FFFFFF;
@@ -31,7 +32,7 @@
             --color-text-muted: #4A5568;
 
             --layout-max-width: 1440px;
-            --content-max-width: 1200px;
+            --content-max-width: 1100px;
         }
 
         body {
@@ -58,14 +59,15 @@
             color: var(--color-text-main);
         }
 
-        p, li {
+        p,
+        li {
             font-size: 1rem;
             line-height: 1.5;
             color: var(--color-text-muted);
         }
 
         /* =========================================================
-           2. Main Layout & Intro Grid (간결해진 클래스명)
+           2. Main Layout & Intro Grid
            ========================================================= */
         .main-wrapper {
             padding: 3rem 0;
@@ -116,7 +118,7 @@
             font-weight: 700;
         }
 
-        /* 작성자 카드 */
+        
         .author-card {
             background-color: var(--color-bg-card);
             padding: 2rem 1.5rem;
@@ -156,6 +158,71 @@
             color: var(--color-text-muted);
             line-height: 1.5;
         }
+
+        /* =========================================================
+           3. Slider Rotator Section
+           ========================================================= */
+        .slider-section {
+            margin-bottom: 3rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+       
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--color-text-main);
+        }
+
+        .slider-wrap {
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-item {
+            z-index: 1;
+            width: clamp(60px, 10vw, 160px);
+            height: 220px; 
+
+            
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+           
+            box-shadow: 0 4px 3px rgba(3, 7, 18, 0.03),
+                0 14px 11px rgba(3, 7, 18, 0.05),
+                0 32px 24px rgba(3, 7, 18, 0.08);
+            background-color: var(--color-brand-primary);
+            transform: perspective(250px) rotateY(20deg) translateX(-20px);
+            transform-origin: 50% 50%;
+            transition: all 250ms ease-in-out;
+        }
+
+       
+        .slider-item:hover {
+            z-index: 2;
+            width: 160px;
+            height: 160px;
+            background-color: var(--color-brand-accent);
+            transform: perspective(250px) rotateY(0deg) translateX(0) scale(2);
+        }
+
+        
+        .slider-item:hover~.slider-item {
+            background-color: var(--color-palette-4);
+            transform: perspective(250px) rotateY(-20deg) translateX(20px);
+        }
     </style>
 </head>
 
@@ -166,7 +233,7 @@
         <main class="main-wrapper">
             <div class="container">
 
-                <!-- SECTION 1: Intro Grid -->
+                <!-- SECTION 1: Intro Grid[cite: 1] -->
                 <section class="intro-grid">
                     <div class="intro-content">
                         <blockquote class="intro-quote">
@@ -174,11 +241,16 @@
                         </blockquote>
                         <h2>5 Essential Facts About Korea</h2>
                         <ul class="fact-list">
-                            <li><strong class="fact-label">1. Unique Identity:</strong> Distinct Hangul alphabet, rich culture, and dynamic lifestyle.</li>
-                            <li><strong class="fact-label">2. Diverse Cuisine:</strong> Famous for Korean BBQ and savory dishes beyond spicy flavors.</li>
-                            <li><strong class="fact-label">3. Smart Travel:</strong> Papago & Naver Map ensure effortless local navigation.</li>
-                            <li><strong class="fact-label">4. Heritage & Future:</strong> Historic royal palaces coexist beside iconic skyscrapers.</li>
-                            <li><strong class="fact-label">5. World-Class Transit:</strong> Safe, fast, and multilingual subway networks nationwide.</li>
+                            <li><strong class="fact-label">1. Unique Identity:</strong> Distinct Hangul alphabet, rich
+                                culture, and dynamic lifestyle.</li>
+                            <li><strong class="fact-label">2. Diverse Cuisine:</strong> Famous for Korean BBQ and savory
+                                dishes beyond spicy flavors.</li>
+                            <li><strong class="fact-label">3. Smart Travel:</strong> Papago & Naver Map ensure
+                                effortless local navigation.</li>
+                            <li><strong class="fact-label">4. Heritage & Future:</strong> Historic royal palaces coexist
+                                beside iconic skyscrapers.</li>
+                            <li><strong class="fact-label">5. World-Class Transit:</strong> Safe, fast, and multilingual
+                                subway networks nationwide.</li>
                         </ul>
                     </div>
 
@@ -186,8 +258,26 @@
                         <img src="./image/jin-avatar.png" alt="Author Profile Picture" class="author-img">
                         <h3 class="author-name">Jin Soo</h3>
                         <p class="author-role">Travel Curator & Developer</p>
-                        <p class="author-bio">Exploring urban nightscapes and hidden cultural gems across East Asia, bringing stories to life through digital experiences.</p>
+                        <p class="author-bio">Exploring urban nightscapes and hidden cultural gems across East Asia,
+                            bringing stories to life through digital experiences.</p>
                     </aside>
+                </section>
+
+                
+                <section class="slider-section">
+                  
+                    <div class="section-title">
+                        <h3>Top Recommended Cities to Visit in Korea</h3>
+                    </div>
+
+                    
+                    <div class="slider-wrap">
+                        <div class="slider-item" style="background-image: url('./image/city-seoul.jpeg');"></div>
+                        <div class="slider-item" style="background-image: url('./image/city-busan.jpeg');"></div>
+                        <div class="slider-item" style="background-image: url('./image/city-gyoungju.jpeg');"></div>
+                        <div class="slider-item" style="background-image: url('./image/city-jeonju.jpeg');"></div>
+                        <div class="slider-item" style="background-image: url('./image/city-jeju.jpeg');"></div>
+                    </div>
                 </section>
 
             </div>
