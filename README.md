@@ -3,7 +3,7 @@
 Ein Gruppenprojekt für die Frontend Weiterbildung bei der Developer Akademie
 
 ## 📖 About
-Der **World Travel Blog** zeigt vier individuelle Reiseziele, kuratiert von drei Teammitgliedern.  
+Der **World Travel Blog** zeigt 3 individuelle Reiseziele, kuratiert von drei Teammitgliedern.  
 Jede Seite präsentiert ein Land mit persönlicher Perspektive – Kultur, Kulinarik und Must-See Sights.
 
 ## ✅ Features
