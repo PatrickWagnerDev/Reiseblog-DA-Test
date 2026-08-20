@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Korea Travel Guide</title>
+    <style>
+        /* =========================================================
+           1. Global Reset & Theme Variables
+           ========================================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            --color-palette-1: #083D77;
+            --color-palette-2: #EBEBD3;
+            --color-palette-3: #F4D35E;
+            --color-palette-4: #EE964B;
+            --color-palette-5: #F95738;
+
+            --color-brand-accent: var(--color-palette-5);
+            --color-bg-page: var(--color-palette-2);
+            --color-bg-main: #FFFFFF;
+            --color-bg-card: var(--color-palette-2);
+
+            --color-text-main: var(--color-palette-1);
+            --color-text-muted: #4A5568;
+
+            --layout-max-width: 1440px;
+            --content-max-width: 1200px;
+        }
+
+        body {
+            background-color: var(--color-bg-page);
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+            color: var(--color-text-main);
+            line-height: 1.5;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: var(--layout-max-width);
+            background-color: var(--color-bg-main);
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.08);
+        }
+
+        h2 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--color-text-main);
+        }
+
+        p, li {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: var(--color-text-muted);
+        }
+
+        /* =========================================================
+           2. Main Layout & Intro Grid (간결해진 클래스명)
+           ========================================================= */
+        .main-wrapper {
+            padding: 3rem 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: var(--content-max-width);
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        .intro-content {
+            background-color: var(--color-bg-card);
+            padding: 2rem 1.5rem;
+            border-radius: 1rem;
+            border-left: 0.5rem solid var(--color-brand-accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro-quote {
+            font-size: 1rem;
+            font-style: italic;
+            color: var(--color-brand-accent);
+            margin-bottom: 1rem;
+            font-weight: 600;
+        }
+
+        .fact-list {
+            list-style: none;
+        }
+
+        .fact-list li {
+            margin-bottom: 0.5rem;
+        }
+
+        .fact-label {
+            color: var(--color-text-main);
+            font-weight: 700;
+        }
+
+        /* 작성자 카드 */
+        .author-card {
+            background-color: var(--color-bg-card);
+            padding: 2rem 1.5rem;
+            border-radius: 1rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .author-img {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 50%;
+            background-color: var(--color-palette-3);
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 0.2rem solid var(--color-brand-accent);
+        }
+
+        .author-name {
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+            color: var(--color-text-main);
+            font-weight: 700;
+        }
+
+        .author-role {
+            font-size: 1rem;
+            color: var(--color-brand-accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .author-bio {
+            font-size: 1rem;
+            color: var(--color-text-muted);
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="page-container">
+
+        <main class="main-wrapper">
+            <div class="container">
+
+                <!-- SECTION 1: Intro Grid -->
+                <section class="intro-grid">
+                    <div class="intro-content">
+                        <blockquote class="intro-quote">
+                            "Korea: Where ancient royal tranquility meets high-tech modern energy."
+                        </blockquote>
+                        <h2>5 Essential Facts About Korea</h2>
+                        <ul class="fact-list">
+                            <li><strong class="fact-label">1. Unique Identity:</strong> Distinct Hangul alphabet, rich culture, and dynamic lifestyle.</li>
+                            <li><strong class="fact-label">2. Diverse Cuisine:</strong> Famous for Korean BBQ and savory dishes beyond spicy flavors.</li>
+                            <li><strong class="fact-label">3. Smart Travel:</strong> Papago & Naver Map ensure effortless local navigation.</li>
+                            <li><strong class="fact-label">4. Heritage & Future:</strong> Historic royal palaces coexist beside iconic skyscrapers.</li>
+                            <li><strong class="fact-label">5. World-Class Transit:</strong> Safe, fast, and multilingual subway networks nationwide.</li>
+                        </ul>
+                    </div>
+
+                    <aside class="author-card">
+                        <img src="./image/jin-avatar.png" alt="Author Profile Picture" class="author-img">
+                        <h3 class="author-name">Jin Soo</h3>
+                        <p class="author-role">Travel Curator & Developer</p>
+                        <p class="author-bio">Exploring urban nightscapes and hidden cultural gems across East Asia, bringing stories to life through digital experiences.</p>
+                    </aside>
+                </section>
+
+            </div>
+        </main>
+
+    </div>
+
+</body>
+
+</html>
