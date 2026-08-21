@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog - Home</title>
+    <link rel="stylesheet" href="jin-landingpage01-style.css">
+</head>
+<body>
+
+    <!-- Main Page Wrapper Container -->
+    <div class="page-wrapper">
+
+        <!-- Header Component Section -->
+        <header class="header">
+            <div class="header__container">
+                <div class="header__logo">
+                    <img src="./image/logo-big.jpeg" alt="logo-big" class="header__logo-img"> World Travel Blog
+                </div>
+                <nav class="nav">
+                    <a href="#highlights" class="nav__link">Highlights</a>
+                    <a href="#faq" class="nav__link">FAQ</a>
+                    <a href="#contact" class="nav__link">Contact</a>
+                </nav>
+            </div>
+        </header>
+
+        <!-- Hero Web Section Component -->
+        <section class="hero">
+            <div class="hero__card">
+                <div class="hero__content">
+                    <h1 class="hero__title">
+                        Sunrise in India,<br>
+                        Noon in Europe,<br>
+                        Midnight in Seoul.
+                    </h1>
+                    <p class="hero__desc">
+                        A continuous voyage through time and space. Discover the world’s hidden pulse through the lens of three local creators (Jini, Neelima, and Patrick).
+                    </p>
+                    <a href="#highlights" class="btn--primary">Begin the Journey</a>
+                </div>
+                <div class="hero__img"></div>
+            </div>
+        </section>
+
+        <!-- Main Home Content Section -->
+        <main class="main-content" id="highlights">
+            
+            <div class="section-header">
+                <h2 class="section-header__title">📌 Highlights</h2>
+                <p class="section-header__desc">
+                    From vibrant Asian nightscapes to historic European landscapes, discover our creators' top destinations.
+                </p>
+            </div>
+
+            <!-- Slider Component -->
+            <div class="slider">
+                <!-- 라디오 버튼들 (화면에는 숨김 처리) -->
+                <input type="radio" name="slider" id="slide1" class="slider__input" checked>
+                <input type="radio" name="slider" id="slide2" class="slider__input">
+                <input type="radio" name="slider" id="slide3" class="slider__input">
+
+                <div class="slider__wrapper">
+                    <div class="slider__slide slider__slide--one">
+                        <div class="slider__text">
+                            <h3 class="slider__title">🇰🇷 Jin's Pick: Seoul & Beyond</h3>
+                            <p class="slider__desc">Where ancient royal tranquility meets high-tech modern energy.</p>
+                        </div>
+                    </div>
+                    <div class="slider__slide slider__slide--two">
+                        <div class="slider__text">
+                            <h3 class="slider__title">🇮🇳 Neelima's Pick: Incredible India</h3>
+                            <p class="slider__desc">A land of rich heritage, vibrant colors, and unforgettable flavors.</p>
+                        </div>
+                    </div>
+                    <div class="slider__slide slider__slide--three">
+                        <div class="slider__text">
+                            <h3 class="slider__title">🇩🇪 Patrick's Pick: Scenic Germany</h3>
+                            <p class="slider__desc">Fairytale castles, historic cities, and pristine alpine nature.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider__dots">
+                    <label for="slide1" class="slider__dot slider__dot--one"></label>
+                    <label for="slide2" class="slider__dot slider__dot--two"></label>
+                    <label for="slide3" class="slider__dot slider__dot--three"></label>
+                </div>
+            </div>
+
+            <!-- FAQ Accordion Section Component -->
+            <section class="faq" id="faq">
+                <div class="section-header">
+                    <h2 class="section-header__title">❓ FAQ</h2>
+                </div>
+                <details class="faq__item">
+                    <summary class="faq__summary">What's the story behind our travel blog?</summary>
+                    <p class="faq__content">Detailed answer goes here...</p>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__summary">How do we plan, document, and share our travels?</summary>
+                    <p class="faq__content">Detailed answer goes here...</p>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__summary">How can brands or fellow creators collaborate with us?</summary>
+                    <p class="faq__content">Detailed answer goes here...</p>
+                </details>
+                <details class="faq__item">
+                    <summary class="faq__summary">How can readers support this blog and our work?</summary>
+                    <p class="faq__content">Detailed answer goes here...</p>
+                </details>
+            </section>
+
+            <!-- Contact Form Section Component -->
+            <section class="contact" id="contact">
+                <div class="section-header">
+                    <h2 class="section-header__title">✉️ Contact Form</h2>
+                    <p class="section-header__desc">Have a question or an idea to collaborate? Get in touch!</p>
+                </div>
+                <form class="contact__form" onsubmit="event.preventDefault();">
+                    <input type="text" class="contact__input" placeholder="What's your name?">
+                    <input type="email" class="contact__input" placeholder="What's your email?">
+                    <input type="text" class="contact__input contact__input--full" placeholder="How can we help?">
+                    <button type="submit" class="btn--primary contact__btn">Send</button>
+                </form>
+            </section>
+
+        </main>
+
+        <!-- Footer Component Section -->
+        <footer class="footer">
+            <div class="footer__container">
+                <div class="footer__links">
+                    <span>&copy; 2026 Travel Blog. All rights reserved.</span>
+                </div>
+                <div class="footer__links">
+                    <span>Imprint</span>
+                    <span>Cookie Preferences</span>
+                </div>
+            </div>
+        </footer>
+
+    </div>
+
+</body>
+</html>

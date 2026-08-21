@@ -1,0 +1,211 @@
+
+/* =========================================================
+    1. Global Reset & Theme Variables (Replaced with jin-landingpage01.css standards)
+ ========================================================= */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        :root {
+            /* Font size scale (1rem = 16px base) */
+            --font-base: 1rem;     /* 16px - Base text */
+            --font-lg: 1.5rem;     /* 24px - Subheading */
+            --font-xl: 2rem;       /* 32px - Section title */
+            --font-xxl: 3rem;      /* 48px - Main heading */
+
+            /* Brand colors */
+            --c-primary: #083D77;
+            --c-secondary: #EBEBD3;
+            --c-accent: #F95738;
+        }
+
+        body {
+            background-color: var(--c-secondary);
+            font-family: 'Inter', sans-serif;
+            color: var(--c-primary);
+            line-height: 1.6;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .page-container {
+            width: 100%;
+            max-width: 1440px;
+            background-color: #FFFFFF;
+            box-shadow: 0 0 2rem rgba(0,0,0,0.05); /* 2rem = 32px */
+        }
+
+        h2 {
+            font-size: var(--font-lg);
+            font-weight: 700;
+            margin-bottom: 1rem;
+            color: var(--c-primary);
+        }
+
+        p,
+        li {
+            font-size: var(--font-base);
+            line-height: 1.6;
+            color: var(--c-primary);
+        }
+
+        /* =========================================================
+           2. Main Layout & Intro Grid
+           ========================================================= */
+        .main-wrapper {
+            padding: 4rem 0;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+
+        .intro-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 1.5rem;
+            margin-bottom: 4rem;
+        }
+
+        .intro-content {
+            background-color: var(--c-secondary);
+            padding: 2.5rem;
+            border-radius: 0.5rem;
+            border-left: 0.5rem solid var(--c-accent);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .intro-quote {
+            font-size: var(--font-base);
+            font-style: italic;
+            color: var(--c-accent);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+
+        .fact-list {
+            list-style: none;
+        }
+
+        .fact-list li {
+            margin-bottom: 0.5rem;
+            font-size: var(--font-base);
+        }
+
+        .fact-label {
+            color: var(--c-primary);
+            font-weight: 700;
+        }
+
+
+        .author-card {
+            background-color: var(--c-secondary);
+            padding: 2.5rem 1.5rem;
+            border-radius: 0.5rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        .author-img {
+            width: 5.5rem;
+            height: 5.5rem;
+            border-radius: 50%;
+            background-color: #F4D35E;
+            margin-bottom: 1rem;
+            object-fit: cover;
+            border: 0.2rem solid var(--c-accent);
+        }
+
+        .author-name {
+            font-size: var(--font-lg);
+            margin-bottom: 0.5rem;
+            color: var(--c-primary);
+            font-weight: 800;
+        }
+
+        .author-role {
+            font-size: var(--font-base);
+            color: var(--c-accent);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .author-bio {
+            font-size: var(--font-base);
+            color: var(--c-primary);
+            line-height: 1.6;
+        }
+
+        /* =========================================================
+           3. Slider Rotator Section
+           ========================================================= */
+        .slider-section {
+            margin-bottom: 4rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .section-title h3 {
+            font-size: var(--font-xl);
+            font-weight: 800;
+            color: var(--c-primary);
+        }
+
+        .slider-wrap {
+            height: 320px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider-item {
+            z-index: 1;
+            width: clamp(60px, 10vw, 160px);
+            height: 220px;
+
+
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+
+
+            box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+            background-color: var(--c-primary);
+            transform: perspective(250px) rotateY(20deg) translateX(-20px);
+            transform-origin: 50% 50%;
+            transition: all 250ms ease-in-out;
+            border-radius: 0.5rem;
+        }
+
+
+        .slider-item:hover {
+            z-index: 2;
+            width: 160px;
+            height: 160px;
+            background-color: var(--c-accent);
+            transform: perspective(250px) rotateY(0deg) translateX(0) scale(2);
+        }
+
+
+        .slider-item:hover~.slider-item {
+            background-color: var(--c-accent);
+            transform: perspective(250px) rotateY(-20deg) translateX(20px);
+        }

@@ -1,0 +1,305 @@
+/* =========================================================
+    1. Global Reset & Variables
+========================================================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    /* Font size scale (based on 1rem = 16px) */
+    --font-base: 1rem;     /* 16px - Regular text */
+    --font-lg: 1.5rem;     /* 24px - Subheading */
+    --font-xl: 2rem;       /* 32px - Section title */
+    --font-xxl: 3rem;      /* 48px - Main large title */
+
+    /* Brand colors */
+    --c-primary: #083D77;
+    --c-secondary: #EBEBD3;
+    --c-accent: #F95738;
+}
+
+body {
+    background-color: var(--c-secondary);
+    font-family: 'Inter', sans-serif;
+    color: var(--c-primary);
+    line-height: 1.6;
+    display: flex;
+    justify-content: center; /* Center align the whole page */
+}
+
+/* =========================================================
+    2. Common Elements (Buttons, Containers)
+========================================================= */
+/* White canvas wrapper for the entire page */
+.page-wrapper {
+    width: 100%;
+    max-width: 1440px;
+    background-color: #FFFFFF;
+    box-shadow: 0 0 2rem rgba(0,0,0,0.05); /* 2rem = 32px */
+}
+
+/* Common button style */
+.btn--primary {
+    display: inline-block;
+    background-color: var(--c-accent);
+    color: white;
+    padding: 1rem 1.5rem; /* Top/Bottom 1rem, Left/Right 1.5rem */
+    border-radius: 0.5rem;
+    border: none;
+    font-weight: 700;
+    font-size: var(--font-base);
+    text-decoration: none;
+    cursor: pointer;
+}
+.btn--primary:hover {
+    opacity: 0.9;
+}
+
+/* =========================================================
+    3. Header & Navigation
+========================================================= */
+.header {
+    background-color: var(--c-primary);
+    padding: 1rem 0;
+}
+.header__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.header__logo {
+    color: white;
+    font-size: var(--font-lg);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+.header__logo-img {
+    width: 3.5rem;
+    height: 3.5rem;
+}
+.nav {
+    display: flex;
+    gap: 2rem;
+}
+.nav__link {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* =========================================================
+    4. Hero Section (Main Banner)
+========================================================= */
+.hero__card {
+    display: grid;
+    grid-template-columns: 1.1fr 1.3fr;
+    background-color: var(--c-secondary);
+}
+.hero__content {
+    padding: 5rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.hero__title {
+    font-size: var(--font-xxl);
+    font-weight: 900;
+    margin-bottom: 1.5rem;
+    line-height: 1.2;
+}
+.hero__desc {
+    font-size: var(--font-base);
+    margin-bottom: 2rem;
+}
+.hero__img {
+    background-image: url('./image/hero-img.jpeg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* =========================================================
+    5. Main Content (Center-aligned content area)
+========================================================= */
+.main-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem;
+}
+.section-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+.section-header__title {
+    font-size: var(--font-xl);
+}
+.section-header__desc {
+    font-size: var(--font-base);
+    margin-top: 0.5rem;
+}
+
+/* =========================================================
+    6. Slider Component
+========================================================= */
+.slider {
+    position: relative;
+    overflow: hidden;
+    border-radius: 1.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
+    margin-bottom: 4rem;
+}
+.slider__input {
+    display: none; /* Hide actual radio buttons */
+}
+.slider__wrapper {
+    display: flex;
+    width: 300%;
+    transition: transform 0.5s ease;
+}
+.slider__slide {
+    width: 33.333%;
+    height: 25rem;
+    padding: 2.5rem;
+    display: flex;
+    align-items: flex-end;
+    color: white;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+/* Add dark gradient overlay on top of the image */
+.slider__slide::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(17,29,74,0.85) 0%, transparent 60%);
+}
+.slider__slide--one { background-image: url("./image/home-slider01.jpeg"); }
+.slider__slide--two { background-image: url("./image/home-slider02.jpeg"); }
+.slider__slide--three { background-image: url("./image/home-slider03.jpeg"); }
+
+.slider__text {
+    position: relative;
+    z-index: 1;
+}
+.slider__title {
+    font-size: var(--font-lg);
+    margin-bottom: 0.5rem;
+    color: #F4D35E;
+}
+
+/* Move slide based on radio button selection */
+#slide1:checked ~ .slider__wrapper { transform: translateX(0%); }
+#slide2:checked ~ .slider__wrapper { transform: translateX(-33.333%); }
+#slide3:checked ~ .slider__wrapper { transform: translateX(-66.666%); }
+
+/* Circle dots below the slider */
+.slider__dots {
+    position: absolute;
+    bottom: 1.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 0.5rem;
+    z-index: 2;
+}
+.slider__dot {
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    background-color: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+#slide1:checked ~ .slider__dots .slider__dot--one,
+#slide2:checked ~ .slider__dots .slider__dot--two,
+#slide3:checked ~ .slider__dots .slider__dot--three {
+    background-color: var(--c-accent);
+    width: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* =========================================================
+    7. FAQ Section (Using details/summary tags)
+========================================================= */
+.faq {
+    max-width: 800px;
+    margin: 0 auto 4rem;
+}
+.faq__item {
+    background-color: var(--c-secondary);
+    border-radius: 0.5rem;
+    margin-bottom: 0.5rem;
+    cursor: pointer;
+}
+.faq__summary {
+    padding: 1.5rem;
+    font-weight: 700;
+    font-size: var(--font-base);
+    list-style: none; /* Remove default arrow */
+}
+.faq__content {
+    padding: 0 1.5rem 1.5rem; /* Inner content padding */
+    font-size: var(--font-base);
+}
+
+/* =========================================================
+    8. Contact Form
+========================================================= */
+.contact {
+    max-width: 700px;
+    margin: 0 auto 4rem;
+}
+.contact__form {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+}
+.contact__input {
+    width: 100%;
+    padding: 1rem 0;
+    border: none;
+    border-bottom: 2px solid #E2E8F0;
+    background: transparent;
+    font-size: var(--font-base);
+    outline: none;
+}
+.contact__input:focus {
+    border-bottom-color: var(--c-accent);
+}
+.contact__input--full {
+    grid-column: span 2; /* Span across 2 columns */
+}
+.contact__btn {
+    grid-column: span 2;
+    justify-self: center;
+    margin-top: 1.5rem;
+    border-radius: 1.5rem; /* Make button slightly rounder */
+}
+
+/* =========================================================
+    9. Footer
+========================================================= */
+.footer {
+    background-color: var(--c-primary);
+    color: white;
+    padding: 1.5rem 0;
+}
+.footer__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.footer__links {
+    display: flex;
+    gap: 1.5rem;
+}
