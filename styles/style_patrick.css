@@ -1,3 +1,131 @@
 body {
     font-family: 'Palanquin';
 }
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 16px max(calc((100% - 1440px)/2), 96px);
+    gap: 102px;
+
+    background-color: #4EA487;
+}
+
+.header > img {
+    height: 72px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 72px;
+}
+
+.nav-bar > a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+
+    font-family: 'Arima';
+    text-decoration: none;
+}
+
+.nav-highlights,
+.nav-faq,
+.nav-contact {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-highlights::after,
+.nav-faq::after,
+.nav-contact::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 105%;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-highlights:hover::after,
+.nav-faq:hover::after,
+.nav-contact:hover::after {
+    opacity: 1;
+}
+
+.nav-highlights::after {
+    background-image: url('../assets/icon/underline_highlights.png');
+}
+.nav-faq::after {
+    background-image: url('../assets/icon/underline_faq.png');
+}
+.nav-contact::after {
+    background-image: url('../assets/icon/underline_contact.png');
+}
+
+.nav-bar a:active::after {
+    opacity: 0;
+}
+
+.nav-bar a:active {
+    color: #F1C953;
+}
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 16px max(calc((100% - 1440px)/2), 88px);
+
+    background-color: #4EA487;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 72px;
+    
+    color: white;
+}
+
+.footer-nav p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-nav img {
+    height: 24px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    min-width: 80px;
+}
+
+.footer-nav a:hover {
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links img {
+    height: 32px;
+}
+
+.footer-links img:hover{
+    box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.19);
+    border-radius: 5px;
+}
