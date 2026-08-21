@@ -2,12 +2,33 @@ body {
     font-family: 'Palanquin';
 }
 
+h1 {
+    font-family: 'Arima';
+    font-weight: bold;
+    font-size: 4rem;
+    color: #F1C953;
+    line-height: 1.2;
+}
+
+h2 {
+    font-size: 2.5rem;
+    color: #4EA487;
+    padding-bottom: 16px;
+}
+
+h3 {
+    font-family: 'Arima';
+    font-size: 2rem;
+    color: #54370D;
+    padding-bottom: 24px;
+}
+
 .header {
     display: flex;
     justify-content: flex-start;
     align-items: center;
 
-    padding: 16px max(calc((100% - 1440px)/2), 96px);
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
     gap: 102px;
 
     background-color: #4EA487;
@@ -15,6 +36,12 @@ body {
 
 .header > img {
     height: 72px;
+}
+
+.article-text {
+    font-size: 1.5rem;
+    color: #3D3D3D;
+    padding-bottom: 88px;
 }
 
 .nav-bar {
@@ -78,12 +105,87 @@ body {
     color: #F1C953;
 }
 
+.main-content {
+    padding: 48px max(calc((100% - 1440px)/2), 88px);
+}
+
+.hero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 32px;
+    padding-bottom: 88px;
+}
+
+.landing-article {
+    font-size: 1.75rem;
+    color: #54370D;
+    line-height: 1.2;
+}
+
+.info-bar {
+    display: flex;
+    align-items: center;
+    gap: 32px;
+    font-size: 1rem;
+    color: #54370D;
+    padding-top: 40px;
+}
+
+.info-bar p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+
+}
+
+.author-card {
+    background-color: #4EA48733;
+    width: 480px;
+    color: #54370D;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 24px;
+    border-radius: 30px;
+}
+
+.author-card img {
+    height: 120px;
+}
+
+.author-name {
+    font-family: 'Arima';
+    font-size: 1.2rem;
+    font-weight: bold;
+    line-height: 80%;
+    padding-top: 24px;
+}
+
+.author-job {
+    font-family: 'Arima';
+    font-size: 1.2rem;
+}
+
+.author-description {
+    line-height: 1.2;
+}
+
+.rain-graph {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 88px;
+}
+
 .footer {
     display: flex;
     justify-content: space-between;
     align-items: center;
 
-    padding: 16px max(calc((100% - 1440px)/2), 88px);
+    padding: 48px max(calc((100% - 1440px)/2), 88px);
 
     background-color: #4EA487;
 }
