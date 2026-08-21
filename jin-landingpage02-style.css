@@ -12,31 +12,22 @@ html {
 }
 
 :root {
-    /* Font Variables */
+     /* Font Variables */
     --font-heading: 'Montserrat', sans-serif;
     --font-body: 'Inter', sans-serif;
 
     /* Font size scale (based on 1rem = 16px) */
-    --font-base: 1rem;
-    /* 16px - Regular text */
-    --font-lg: 1.5rem;
-    /* 24px - Subheading */
-    --font-xl: 2rem;
-    /* 32px - Section title */
-    --font-xxl: 3rem;
-    /* 48px - Main large title */
+    --font-base: 1rem;     /* 16px - Regular text */
+    --font-lg: 1.5rem;     /* 24px - Subheading */
+    --font-xl: 2rem;       /* 32px - Section title */
+    --font-xxl: 3rem;      /* 48px - Main large title */
 
     /* Brand colors */
-    --c-primary: #083D77;
-    /* Regal Navy */
-    --c-secondary: #EBEBD3;
-    /* Beige */
-    --c-accent: #F95738;
-    /* Tomato */
-    --c-buttonpoint: #F4D35E;
-    /* Royal Gold */
-    --c-hoverpoint: #EE964B;
-    /* Sandy Brown */
+    --c-primary: #083D77;     /* Regal Navy */
+    --c-secondary: #EBEBD3;   /* Beige */
+    --c-accent: #F95738;      /* Tomato */
+    --c-buttonpoint: #F4D35E; /* Royal Gold */
+    --c-hoverpoint: #EE964B;  /* Sandy Brown */
 }
 
 body {
@@ -45,15 +36,10 @@ body {
     color: var(--c-primary);
     line-height: 1.6;
     display: flex;
-    justify-content: center;
-    /* Center align the whole page */
+    justify-content: center; /* Center align the whole page */
 }
 
-h1,
-h2,
-h3,
-h4,
-.intro-quote {
+h1, h2, h3, h4, .intro-quote {
     font-family: var(--font-heading);
 }
 
@@ -65,8 +51,7 @@ h4,
     width: 100%;
     max-width: 1440px;
     background-color: #FFFFFF;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
-    /* 2rem = 32px */
+    box-shadow: 0 0 2rem rgba(0,0,0,0.05); /* 2rem = 32px */
 }
 
 /* Common button style */
@@ -74,8 +59,7 @@ h4,
     display: inline-block;
     background-color: var(--c-accent);
     color: white;
-    padding: 1rem 1.5rem;
-    /* Top/Bottom 1rem, Left/Right 1.5rem */
+    padding: 1rem 1.5rem; /* Top/Bottom 1rem, Left/Right 1.5rem */
     border-radius: 0.5rem;
     border: none;
     font-weight: 700;
@@ -83,7 +67,6 @@ h4,
     text-decoration: none;
     cursor: pointer;
 }
-
 .btn--primary:hover {
     opacity: 0.9;
 }
@@ -95,7 +78,6 @@ h4,
     background-color: var(--c-primary);
     padding: 1rem 0;
 }
-
 .header__container {
     max-width: 1440px;
     margin: 0 auto;
@@ -104,7 +86,6 @@ h4,
     justify-content: space-between;
     align-items: center;
 }
-
 .header__logo {
     color: white;
     font-size: var(--font-lg);
@@ -113,17 +94,14 @@ h4,
     align-items: center;
     gap: 0.5rem;
 }
-
 .header__logo-img {
     width: 3.5rem;
     height: 3.5rem;
 }
-
 .nav {
     display: flex;
     gap: 2rem;
 }
-
 .nav__link {
     color: white;
     text-decoration: none;
@@ -131,37 +109,121 @@ h4,
 }
 
 /* =========================================================
-    4. Hero Section (Main Banner)
+    4. Hero Section (Main Banner) - Responsive Layout Only
 ========================================================= */
+.hero {
+    position: relative;
+    width: 100%;
+    min-height: 520px; /* 고정 높이 대신 최소 높이로 유연하게 처리 */
+    background-color: var(--c-buttonpoint);
+    overflow: hidden;
+}
+
+/* 1단계: Intro 타이틀 */
+.hero__intro-text {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: var(--font-xxl); /* 기존 변수 유지 */
+    font-weight: 700;
+    color: var(--c-primary);
+    z-index: 10;
+    animation: introSequence 2.5s ease-in-out forwards;
+}
+
+/* 2단계: 전체 카드 레이아웃 (2:3 비율 가변 유지) */
 .hero__card {
     display: grid;
-    grid-template-columns: 1.1fr 1.3fr;
+    grid-template-columns: 2fr 3fr; 
+    width: 100%;
+    min-height: 520px;
     background-color: var(--c-secondary);
 }
 
+/* 왼쪽 텍스트 영역 */
 .hero__content {
-    padding: 5rem 4rem;
+    padding: 4rem 3rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    background-color: var(--c-secondary);
+    z-index: 2;
+    opacity: 0;
+    transform: translateX(-50px);
+    animation: slideInLeft 1s ease-out 2.3s forwards;
 }
 
 .hero__title {
-    font-size: var(--font-xxl);
+    font-size: var(--font-xxl); /* 기존 변수 유지 */
     font-weight: 900;
-    margin-bottom: 1.5rem;
+    margin-bottom: 1rem;
     line-height: 1.2;
 }
 
 .hero__desc {
-    font-size: var(--font-base);
-    margin-bottom: 2rem;
+    font-size: var(--font-base); /* 기존 변수 유지 */
+    margin-bottom: 1.5rem;
 }
 
+/* 오른쪽 이미지 영역 (비율에 따라 함께 줄어듦) */
 .hero__img {
+    width: 100%;
+    height: 100%;
     background-image: url('./image/hero-img.jpeg');
-    background-size: cover;
-    background-position: center;
+    background-size: cover; /* 이미지가 영역 비율에 맞춰 자동 조절됨 */
+    background-position: top;
+    transform: translateX(100%);
+    animation: slideInRight 1.2s cubic-bezier(0.25, 1, 0.5, 1) 1.8s forwards;
+}
+
+
+/* =========================================================
+    반응형 미디어 쿼리 (레이아웃만 세로 배치로 전환)
+========================================================= */
+
+@media (max-width: 850px) {
+    .hero {
+        min-height: auto;
+    }
+
+    .hero__card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 300px;
+        min-height: auto;
+    }
+
+    .hero__content {
+        padding: 2.5rem 1.5rem;
+        order: 2;
+    }
+
+    .hero__img {
+        order: 1;
+        height: 300px;
+    }
+}
+
+
+/* =========================================================
+    CSS Keyframes
+========================================================= */
+
+@keyframes introSequence {
+    0% { opacity: 0; transform: scale(0.95); }
+    30% { opacity: 1; transform: scale(1); }
+    70% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.05); visibility: hidden; }
+}
+
+@keyframes slideInRight {
+    to { transform: translateX(0); }
+}
+
+@keyframes slideInLeft {
+    to { opacity: 1; transform: translateX(0); }
 }
 
 /* =========================================================
@@ -172,16 +234,13 @@ h4,
     margin: 0 auto;
     padding: 4rem 1.5rem;
 }
-
 .section-header {
     text-align: center;
     margin-bottom: 2rem;
 }
-
 .section-header__title {
     font-size: var(--font-xl);
 }
-
 .section-header__desc {
     font-size: var(--font-base);
     margin-top: 0.5rem;
@@ -194,21 +253,17 @@ h4,
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0.5rem 1.5rem rgba(0,0,0,0.08);
     margin-bottom: 4rem;
 }
-
 .slider__input {
-    display: none;
-    /* Hide actual radio buttons */
+    display: none; /* Hide actual radio buttons */
 }
-
 .slider__wrapper {
     display: flex;
     width: 300%;
     transition: transform 0.5s ease;
 }
-
 .slider__slide {
     width: 33.333%;
     height: 25rem;
@@ -220,32 +275,21 @@ h4,
     background-position: center;
     position: relative;
 }
-
 /* Add dark gradient overlay on top of the image */
 .slider__slide::before {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(to top, rgba(17, 29, 74, 0.85) 0%, transparent 60%);
+    background: linear-gradient(to top, rgba(17,29,74,0.85) 0%, transparent 60%);
 }
-
-.slider__slide--one {
-    background-image: url("./image/home-slider01.jpeg");
-}
-
-.slider__slide--two {
-    background-image: url("./image/home-slider02.jpeg");
-}
-
-.slider__slide--three {
-    background-image: url("./image/home-slider03.jpeg");
-}
+.slider__slide--one { background-image: url("./image/home-slider01.jpeg"); }
+.slider__slide--two { background-image: url("./image/home-slider02.jpeg"); }
+.slider__slide--three { background-image: url("./image/home-slider03.jpeg"); }
 
 .slider__text {
     position: relative;
     z-index: 1;
 }
-
 .slider__title {
     font-size: var(--font-lg);
     margin-bottom: 0.5rem;
@@ -253,17 +297,9 @@ h4,
 }
 
 /* Move slide based on radio button selection */
-#slide1:checked~.slider__wrapper {
-    transform: translateX(0%);
-}
-
-#slide2:checked~.slider__wrapper {
-    transform: translateX(-33.333%);
-}
-
-#slide3:checked~.slider__wrapper {
-    transform: translateX(-66.666%);
-}
+#slide1:checked ~ .slider__wrapper { transform: translateX(0%); }
+#slide2:checked ~ .slider__wrapper { transform: translateX(-33.333%); }
+#slide3:checked ~ .slider__wrapper { transform: translateX(-66.666%); }
 
 /* Circle dots below the slider */
 .slider__dots {
@@ -275,18 +311,16 @@ h4,
     gap: 0.5rem;
     z-index: 2;
 }
-
 .slider__dot {
     width: 1rem;
     height: 1rem;
     border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255,255,255,0.5);
     cursor: pointer;
 }
-
-#slide1:checked~.slider__dots .slider__dot--one,
-#slide2:checked~.slider__dots .slider__dot--two,
-#slide3:checked~.slider__dots .slider__dot--three {
+#slide1:checked ~ .slider__dots .slider__dot--one,
+#slide2:checked ~ .slider__dots .slider__dot--two,
+#slide3:checked ~ .slider__dots .slider__dot--three {
     background-color: var(--c-accent);
     width: 2rem;
     border-radius: 0.5rem;
@@ -299,25 +333,20 @@ h4,
     max-width: 800px;
     margin: 0 auto 4rem;
 }
-
 .faq__item {
     background-color: var(--c-secondary);
     border-radius: 0.5rem;
     margin-bottom: 0.5rem;
     cursor: pointer;
 }
-
 .faq__summary {
     padding: 1.5rem;
     font-weight: 700;
     font-size: var(--font-base);
-    list-style: none;
-    /* Remove default arrow */
+    list-style: none; /* Remove default arrow */
 }
-
 .faq__content {
-    padding: 0 1.5rem 1.5rem;
-    /* Inner content padding */
+    padding: 0 1.5rem 1.5rem; /* Inner content padding */
     font-size: var(--font-base);
 }
 
@@ -328,14 +357,12 @@ h4,
     max-width: 700px;
     margin: 0 auto 4rem;
 }
-
 .contact__form {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.5rem;
     margin-top: 1.5rem;
 }
-
 .contact__input {
     width: 100%;
     padding: 1rem 0;
@@ -345,22 +372,17 @@ h4,
     font-size: var(--font-base);
     outline: none;
 }
-
 .contact__input:focus {
     border-bottom-color: var(--c-accent);
 }
-
 .contact__input--full {
-    grid-column: span 2;
-    /* Span across 2 columns */
+    grid-column: span 2; /* Span across 2 columns */
 }
-
 .contact__btn {
     grid-column: span 2;
     justify-self: center;
     margin-top: 1.5rem;
-    border-radius: 1.5rem;
-    /* Make button slightly rounder */
+    border-radius: 1.5rem; /* Make button slightly rounder */
 }
 
 /* =========================================================
@@ -371,7 +393,6 @@ h4,
     color: white;
     padding: 1.5rem 0;
 }
-
 .footer__container {
     max-width: 1440px;
     margin: 0 auto;
