@@ -2,6 +2,12 @@ body {
     font-family: 'Palanquin';
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 h1 {
     font-family: 'Arima';
     font-weight: bold;
@@ -229,13 +235,15 @@ h3 {
     text-align: center;
     gap: 40px;
 
+    width: 650px;
+
     position: relative;
 }
 
 .vector-share {
     position: absolute;
     top: 64px;
-    left: 420px;
+    left: 32px;
 }
 
 .button-share {
