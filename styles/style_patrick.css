@@ -299,7 +299,7 @@ h3 {
     display: none;
 }
 
-.follow-section:focus-within .button-share-alt {F
+.follow-section:focus-within .button-share-alt {
     display: flex;
 }
 
