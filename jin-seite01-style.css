@@ -10,8 +10,10 @@
 }
 
 html {
-    scroll-behavior: smooth; /* Enables smooth scrolling for anchor links */
-    font-size: 100%; /* Default browser font size (usually 16px) */
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling for anchor links */
+    font-size: 100%;
+    /* Default browser font size (usually 16px) */
 }
 
 /* CSS Variables for easy theme management and consistency */
@@ -21,17 +23,26 @@ html {
     --font-body: 'Inter', sans-serif;
 
     /* Font size scale */
-    --font-base: 1rem;      /* 16px - Base text */
-    --font-lg: 1.5rem;      /* 24px - Subheading */
-    --font-xl: 2rem;        /* 32px - Section title */
-    --font-xxl: 3rem;       /* 48px - Main heading */
+    --font-base: 1rem;
+    /* 16px - Base text */
+    --font-lg: 1.5rem;
+    /* 24px - Subheading */
+    --font-xl: 2rem;
+    /* 32px - Section title */
+    --font-xxl: 3rem;
+    /* 48px - Main heading */
 
     /* Brand Colors */
-    --c-primary: #083D77;      /* Regal Navy (Main text and elements) */
-    --c-secondary: #EBEBD3;    /* Beige (Background accents) */
-    --c-accent: #F95738;       /* Tomato (Highlight points) */
-    --c-buttonpoint: #F4D35E;  /* Royal Gold (Buttons, hovers) */
-    --c-hoverpoint: #EE964B;   /* Sandy Brown */
+    --c-primary: #083D77;
+    /* Regal Navy (Main text and elements) */
+    --c-secondary: #EBEBD3;
+    /* Beige (Background accents) */
+    --c-accent: #F95738;
+    /* Tomato (Highlight points) */
+    --c-buttonpoint: #F4D35E;
+    /* Royal Gold (Buttons, hovers) */
+    --c-hoverpoint: #EE964B;
+    /* Sandy Brown */
 }
 
 /* Base Body Styles */
@@ -42,11 +53,16 @@ body {
     line-height: 1.6;
     display: flex;
     flex-direction: column;
-    align-items: center; /* Centers the main page wrapper */
+    align-items: center;
+    /* Centers the main page wrapper */
 }
 
 /* Apply specific fonts to headings */
-h1, h2, h3, h4, .intro-quote {
+h1,
+h2,
+h3,
+h4,
+.intro-quote {
     font-family: var(--font-heading);
 }
 
@@ -55,7 +71,8 @@ h1, h2, h3, h4, .intro-quote {
     width: 100%;
     max-width: 1440px;
     background-color: #FFFFFF;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05); /* Adds a soft drop shadow */
+    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+    /* Adds a soft drop shadow */
 }
 
 h2 {
@@ -65,7 +82,8 @@ h2 {
     color: var(--c-primary);
 }
 
-p, li {
+p,
+li {
     font-size: var(--font-base);
     line-height: 1.6;
     color: var(--c-primary);
@@ -85,7 +103,8 @@ p, li {
     margin: 0 auto;
     padding: 0 2.5rem;
     display: flex;
-    justify-content: space-between; /* Pushes logo left, nav right */
+    justify-content: space-between;
+    /* Pushes logo left, nav right */
     align-items: center;
 }
 
@@ -96,8 +115,8 @@ p, li {
     font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 0.5rem; 
-    text-decoration: none; 
+    gap: 0.5rem;
+    text-decoration: none;
 }
 
 
@@ -106,7 +125,7 @@ p, li {
     width: 4rem;
     height: 4rem;
     perspective: 500px;
-    flex-shrink: 0; 
+    flex-shrink: 0;
 }
 
 .logo-container img {
@@ -128,19 +147,30 @@ p, li {
 }
 
 @keyframes rotateGlobe {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
 }
 
 @keyframes floatPlane {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-2px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
 }
 
 /* Navigation Menu */
 .nav {
     display: flex;
-    gap: 2rem; /* Spacing between nav links */
+    gap: 2rem;
+    /* Spacing between nav links */
     align-items: center;
 }
 
@@ -150,11 +180,13 @@ p, li {
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-base);
-    transition: color 0.2s ease; /* Smooth color change on hover */
+    transition: color 0.2s ease;
+    /* Smooth color change on hover */
 }
 
 .nav__link:hover {
-    color: var(--c-buttonpoint); /* Changes to gold on hover */
+    color: var(--c-buttonpoint);
+    /* Changes to gold on hover */
     text-decoration: underline;
 }
 
@@ -166,13 +198,15 @@ p, li {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem; /* Adds padding so content doesn't touch the screen edge */
+    padding: 0 1.5rem;
+    /* Adds padding so content doesn't touch the screen edge */
 }
 
 /* CSS Grid layout for intro text and author card */
 .intro-grid {
     display: grid;
-    grid-template-columns: 2fr 1fr; /* Left column takes up 2 parts, right takes 1 part */
+    grid-template-columns: 2fr 1fr;
+    /* Left column takes up 2 parts, right takes 1 part */
     gap: 1.5rem;
     margin-top: 2rem;
     margin-bottom: 4rem;
@@ -182,32 +216,59 @@ p, li {
     background-color: var(--c-secondary);
     padding: 2.5rem;
     border-radius: 0.5rem;
-    border-left: 0.5rem solid var(--c-accent); /* Colored left border for design */
+    border-left: 0.5rem solid var(--c-accent);
+    /* Colored left border for design */
     display: flex;
     flex-direction: column;
     justify-content: center;
 }
 
-.intro-quote {
-    font-size: var(--font-base);
-    font-style: italic;
+/* Intro Subtitle & Title */
+.intro-subtitle {
     color: var(--c-accent);
-    margin-bottom: 1.5rem;
     font-weight: 700;
-}
-
-.fact-list {
-    list-style: none; /* Removes default bullet points */
-}
-
-.fact-list li {
-    margin-bottom: 0.5rem;
     font-size: var(--font-base);
+    margin-bottom: 0.4rem;
 }
 
-.fact-label {
+.intro-title {
+    font-size: var(--font-xl);
+    font-weight: 800;
     color: var(--c-primary);
-    font-weight: 700;
+    line-height: 1.25;
+    margin-bottom: 1.2rem;
+}
+
+.intro-summary {
+    font-size: var(--font-base);
+    line-height: 1.7;
+    color: var(--c-primary);
+    margin-bottom: 2rem;
+}
+
+/* Blog Post Meta Bar */
+.post-meta {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.5rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(8, 61, 119, 0.15);
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-size: 0.9rem;
+    color: var(--c-primary);
+    font-weight: 400;
+}
+
+.meta-icon {
+    width: 1.25rem;
+    height: 1.25rem;
+    object-fit: contain;
 }
 
 /* Author Sidebar Card */
@@ -224,10 +285,12 @@ p, li {
 .author-img {
     width: 5.5rem;
     height: 5.5rem;
-    border-radius: 50%; /* Makes the image a perfect circle */
+    border-radius: 50%;
+    /* Makes the image a perfect circle */
     background-color: var(--c-buttonpoint);
     margin-bottom: 1rem;
-    object-fit: cover; /* Ensures the image doesn't stretch */
+    object-fit: cover;
+    /* Ensures the image doesn't stretch */
     border: 0.2rem solid var(--c-accent);
 }
 
@@ -290,21 +353,22 @@ p, li {
 /* Individual Slider Items (3D Card Effect for Desktop) */
 .slider-item {
     z-index: 1;
-    width: clamp(60px, 10vw, 160px); /* Responsive width */
+    width: clamp(60px, 10vw, 160px);
+    /* Responsive width */
     height: 220px;
 
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
     background-color: var(--c-primary);
-    
+
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
     border-radius: 0.5rem;
 
     /* 3D Transform properties for accordion effect */
     transform: perspective(250px) rotateY(20deg) translateX(-20px);
     transform-origin: 50% 50%;
-    transition: all 250ms ease-in-out; 
+    transition: all 250ms ease-in-out;
 }
 
 /* Expanding the card when hovered (Desktop only) */
@@ -317,7 +381,7 @@ p, li {
 }
 
 /* Shifting siblings when a card is hovered */
-.slider-item:hover ~ .slider-item {
+.slider-item:hover~.slider-item {
     background-color: var(--c-accent);
     transform: perspective(250px) rotateY(-20deg) translateX(20px);
 }
@@ -327,11 +391,25 @@ p, li {
    If a specific radio button is :checked, find the sibling '.slider-wrap' 
    and change the left margin of the first item to slide the entire track.
 */
-#city1:checked ~ .slider-wrap .slider-item--1 { margin-left: 0%; }
-#city2:checked ~ .slider-wrap .slider-item--1 { margin-left: -100%; }
-#city3:checked ~ .slider-wrap .slider-item--1 { margin-left: -200%; }
-#city4:checked ~ .slider-wrap .slider-item--1 { margin-left: -300%; }
-#city5:checked ~ .slider-wrap .slider-item--1 { margin-left: -400%; }
+#city1:checked~.slider-wrap .slider-item--1 {
+    margin-left: 0%;
+}
+
+#city2:checked~.slider-wrap .slider-item--1 {
+    margin-left: -100%;
+}
+
+#city3:checked~.slider-wrap .slider-item--1 {
+    margin-left: -200%;
+}
+
+#city4:checked~.slider-wrap .slider-item--1 {
+    margin-left: -300%;
+}
+
+#city5:checked~.slider-wrap .slider-item--1 {
+    margin-left: -400%;
+}
 
 /* Smoothly animate the margin change for mobile swiping visual effect */
 .slider-item--1 {
@@ -393,7 +471,8 @@ p, li {
 }
 
 .tips-list {
-    padding-left: 1.25rem; /* Indents the numbered list slightly */
+    padding-left: 1.25rem;
+    /* Indents the numbered list slightly */
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
@@ -454,7 +533,7 @@ p, li {
 }
 
 .share-img {
-    height: 36px; 
+    height: 36px;
     width: auto;
     display: block;
     object-fit: contain;
@@ -479,7 +558,8 @@ p, li {
     margin: 0 auto;
     padding: 0 2.5rem;
     display: flex;
-    justify-content: space-between; /* Aligns text left, icons right */
+    justify-content: space-between;
+    /* Aligns text left, icons right */
     align-items: center;
 }
 
@@ -510,9 +590,10 @@ p, li {
    9. Media Queries for Mobile Screens (max-width: 768px)
 ========================================================= */
 @media (max-width: 768px) {
+
     /* Scale down the base font size slightly to fit small screens */
     html {
-        font-size: 87.5%; 
+        font-size: 87.5%;
     }
 
     /* Mobile Header Layout (Logo Centered, Links Hidden) */
@@ -524,13 +605,15 @@ p, li {
         display: flex;
         justify-content: center;
         align-items: center;
-        height: 70px; /* Fixed height for mobile header */
+        height: 70px;
+        /* Fixed height for mobile header */
         padding: 0 1rem;
     }
 
     .header__logo {
         justify-content: center;
-        font-size: 0; /* Hides the text, showing only the logo image */
+        font-size: 0;
+        /* Hides the text, showing only the logo image */
     }
 
     .header__logo-img {
@@ -538,7 +621,7 @@ p, li {
         height: 3.5rem;
         object-fit: contain;
     }
-    
+
     /* Hide the desktop navigation links entirely */
     .nav {
         display: none !important;
@@ -553,8 +636,13 @@ p, li {
         margin-bottom: 2.5rem;
     }
 
-    .intro-content { padding: 1.5rem; }
-    .author-card { padding: 1.5rem; }
+    .intro-content {
+        padding: 1.5rem;
+    }
+
+    .author-card {
+        padding: 1.5rem;
+    }
 
 
     /* Mobile Slider Transformation (Accordion -> Carousel) */
@@ -562,23 +650,27 @@ p, li {
         width: 100%;
         max-width: 400px;
         height: 240px;
-        overflow: hidden; /* Hides items outside the container block */
+        overflow: hidden;
+        /* Hides items outside the container block */
         border-radius: 1rem;
         box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
-        justify-content: flex-start; /* Aligns items linearly */
+        justify-content: flex-start;
+        /* Aligns items linearly */
     }
 
     .slider-item {
-        min-width: 100%; /* Each image takes up the full container width */
+        min-width: 100%;
+        /* Each image takes up the full container width */
         height: 100%;
-        transform: none !important; /* Disables the 3D rotation from desktop */
+        transform: none !important;
+        /* Disables the 3D rotation from desktop */
         transition: transform 0.4s ease-in-out;
         border-radius: 0;
     }
 
     /* Disables desktop hover enlargement effects on mobile */
     .slider-item:hover,
-    .slider-item:hover ~ .slider-item {
+    .slider-item:hover~.slider-item {
         width: 100% !important;
         height: 100% !important;
         transform: none !important;
@@ -586,11 +678,25 @@ p, li {
     }
 
     /* Slide movement logic via transforms (instead of margins) for better mobile performance */
-    #city1:checked ~ .slider-wrap .slider-item { transform: translateX(0%); }
-    #city2:checked ~ .slider-wrap .slider-item { transform: translateX(-100%); }
-    #city3:checked ~ .slider-wrap .slider-item { transform: translateX(-200%); }
-    #city4:checked ~ .slider-wrap .slider-item { transform: translateX(-300%); }
-    #city5:checked ~ .slider-wrap .slider-item { transform: translateX(-400%); }
+    #city1:checked~.slider-wrap .slider-item {
+        transform: translateX(0%);
+    }
+
+    #city2:checked~.slider-wrap .slider-item {
+        transform: translateX(-100%);
+    }
+
+    #city3:checked~.slider-wrap .slider-item {
+        transform: translateX(-200%);
+    }
+
+    #city4:checked~.slider-wrap .slider-item {
+        transform: translateX(-300%);
+    }
+
+    #city5:checked~.slider-wrap .slider-item {
+        transform: translateX(-400%);
+    }
 
 
     /* Reveal Mobile Pagination Dots */
@@ -611,24 +717,26 @@ p, li {
     }
 
     /* Change dot appearance based on the checked radio button state */
-    #city1:checked ~ .city-slider__dots .city-slider__dot:nth-child(1),
-    #city2:checked ~ .city-slider__dots .city-slider__dot:nth-child(2),
-    #city3:checked ~ .city-slider__dots .city-slider__dot:nth-child(3),
-    #city4:checked ~ .city-slider__dots .city-slider__dot:nth-child(4),
-    #city5:checked ~ .city-slider__dots .city-slider__dot:nth-child(5) {
+    #city1:checked~.city-slider__dots .city-slider__dot:nth-child(1),
+    #city2:checked~.city-slider__dots .city-slider__dot:nth-child(2),
+    #city3:checked~.city-slider__dots .city-slider__dot:nth-child(3),
+    #city4:checked~.city-slider__dots .city-slider__dot:nth-child(4),
+    #city5:checked~.city-slider__dots .city-slider__dot:nth-child(5) {
         background-color: var(--c-accent);
         width: 1.8rem;
-        border-radius: 0.4rem; /* Stretches the active dot into a pill shape */
+        border-radius: 0.4rem;
+        /* Stretches the active dot into a pill shape */
     }
 
-    
+
     .share-img {
-        height: 32px; /* Slightly smaller for mobile */
+        height: 32px;
+        /* Slightly smaller for mobile */
     }
 
 
     /* Mobile Footer Adjustments */
-    
+
     /* Adds bottom padding to the body so content isn't hidden behind the sticky footer */
     body {
         padding-bottom: 88px;
@@ -650,9 +758,14 @@ p, li {
 
     .footer__text-group {
         display: flex;
-        flex-direction: column; /* Stacks text links vertically */
+        flex-direction: column;
+        /* Stacks text links vertically */
         align-items: flex-start;
         gap: 0.4rem;
+    }
+
+    .footer__copyright {
+        order: 3;
     }
 
     .footer__link {
@@ -681,12 +794,14 @@ p, li {
         width: 100%;
         height: 88px;
         background-color: var(--c-buttonpoint);
-        z-index: 9999; /* Ensures the footer stays on top of all other content */
+        z-index: 9999;
+        /* Ensures the footer stays on top of all other content */
     }
 
     .mobile-nav {
         display: flex;
-        justify-content: space-around; /* Distributes icons evenly */
+        justify-content: space-around;
+        /* Distributes icons evenly */
         align-items: center;
         width: 100%;
         padding: 0 1rem;

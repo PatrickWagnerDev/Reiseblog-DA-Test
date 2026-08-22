@@ -7,9 +7,9 @@
     <title>Travel Blog - Home</title>
 
     <!-- Montserrat Font loading -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" >
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap">
 
     <link rel="stylesheet" href="jin-landingpage02-style.css">
 
@@ -23,10 +23,14 @@
         <!-- Header Component Section -->
         <header class="header">
             <div class="header__container">
-                <div class="header__logo">
-                    <img src="./image/logo-big.jpeg" alt="logo-big" class="header__logo-img">
-                    Travel Blog
-                </div>
+                <a href="#" class="header__logo">
+                    <div class="logo-container">
+                        <img src="./image/logo-m-circle.png" class="rotate-circle" alt="Circle Background">
+                        <img src="./image/logo-m-title.png" class="static-title" alt="Travel Blog Title">
+                        <img src="./image/logo-m-airplane.png" class="float-airplane" alt="Airplane">
+                    </div>
+                    <span>Travel Blog</span>
+                </a>
                 <nav class="nav">
                     <a href="#highlights" class="nav__link">Highlights</a>
                     <a href="#faq" class="nav__link">FAQ</a>
@@ -37,12 +41,12 @@
 
         <!-- Hero Web Section Component -->
         <section class="hero">
-            <!-- 1. 처음에 떴다가 사라질 중앙 Intro 타이틀 -->
             <div class="hero__intro-text">
-                Sunrise in India, Noon in Europe, Midnight in Seoul.
+                <span>Sunrise in India,</span>
+                <span>Noon in Europe,</span>
+                <span>Midnight in Seoul.</span>
             </div>
 
-            <!-- 2. 애니메이션 완료 후 구성될 카드 레이아웃 -->
             <div class="hero__card">
                 <div class="hero__content">
                     <h1 class="hero__title">
@@ -73,33 +77,34 @@
 
             <!-- Slider Component -->
             <div class="slider">
-                <!-- Radio Buttons -->
                 <input type="radio" name="slider" id="slide1" class="slider__input" checked>
                 <input type="radio" name="slider" id="slide2" class="slider__input">
                 <input type="radio" name="slider" id="slide3" class="slider__input">
 
                 <div class="slider__wrapper">
-                    <div class="slider__slide slider__slide--one">
+                    <a href="jin-seite01.html" class="slider__slide slider__slide--one">
                         <div class="slider__text">
-                            <h3 class="slider__title">🇰🇷 Jin's Pick: Seoul & Beyond</h3>
-                            <p class="slider__desc">Where ancient royal tranquility meets high-tech modern energy.</p>
+                            <h3 class="slider__title">Seoul, Midnight Pulse</h3>
+                            <p class="slider__desc">Discover local stories with Jini</p>
                         </div>
-                    </div>
+                    </a>
+
                     <div class="slider__slide slider__slide--two">
                         <div class="slider__text">
-                            <h3 class="slider__title">🇮🇳 Neelima's Pick: Incredible India</h3>
-                            <p class="slider__desc">A land of rich heritage, vibrant colors, and unforgettable flavors.
-                            </p>
+                            <h3 class="slider__title">India, Sunrise Voyage</h3>
+                            <p class="slider__desc">Discover local stories with Neelima</p>
                         </div>
                     </div>
+
                     <div class="slider__slide slider__slide--three">
                         <div class="slider__text">
-                            <h3 class="slider__title">🇩🇪 Patrick's Pick: Scenic Germany</h3>
-                            <p class="slider__desc">Fairytale castles, historic cities, and pristine alpine nature.</p>
+                            <h3 class="slider__title">Europe, Noon Passage</h3>
+                            <p class="slider__desc">Discover local stories with Patrick</p>
                         </div>
                     </div>
                 </div>
 
+                <!-- Dots navigation -->
                 <div class="slider__dots">
                     <label for="slide1" class="slider__dot slider__dot--one"></label>
                     <label for="slide2" class="slider__dot slider__dot--two"></label>
@@ -107,52 +112,15 @@
                 </div>
             </div>
 
-            <!-- FAQ Accordion Section Component -->
-            <section class="faq" id="faq">
-                <div class="section-header">
-                    <h2 class="section-header__title">❓ FAQ</h2>
-                </div>
-                <details class="faq__item">
-                    <summary class="faq__summary">What's the story behind our travel blog?</summary>
-                    <p class="faq__content">Detailed answer goes here...</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__summary">How do we plan, document, and share our travels?</summary>
-                    <p class="faq__content">Detailed answer goes here...</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__summary">How can brands or fellow creators collaborate with us?</summary>
-                    <p class="faq__content">Detailed answer goes here...</p>
-                </details>
-                <details class="faq__item">
-                    <summary class="faq__summary">How can readers support this blog and our work?</summary>
-                    <p class="faq__content">Detailed answer goes here...</p>
-                </details>
-            </section>
-
-            <!-- Contact Form Section Component -->
-            <section class="contact" id="contact">
-                <div class="section-header">
-                    <h2 class="section-header__title">✉️ Contact Form</h2>
-                    <p class="section-header__desc">Have a question or an idea to collaborate? Get in touch!</p>
-                </div>
-                <form class="contact__form" onsubmit="event.preventDefault();">
-                    <input type="text" class="contact__input" placeholder="What's your name?">
-                    <input type="email" class="contact__input" placeholder="What's your email?">
-                    <input type="text" class="contact__input contact__input--full" placeholder="How can we help?">
-                    <button type="submit" class="btn--primary contact__btn">Send</button>
-                </form>
-            </section>
-
         </main>
 
         <!-- Footer Component Section -->
         <footer class="footer">
             <div class="footer__container">
-                <div class="footer__right">
-                    <span>&copy; 2026 Travel Blog.</span>
-                    <span>Imprint</span>
-                    <span>Cookie Preferance</span>
+                <div class="footer__text-group">
+                    <span class="footer__copyright">&copy; 2026 Travel Blog.</span>
+                    <a href="#" class="footer__link">Imprint</a>
+                    <a href="#" class="footer__link">Cookie Preferences</a>
                 </div>
                 <div class="footer__links">
                     <img src="./icon/tiktok.svg" alt="Tiktok">
@@ -162,8 +130,24 @@
                 </div>
             </div>
         </footer>
-
     </div>
+
+    <footer class="footer--mobile">
+        <nav class="mobile-nav">
+            <a href="#highlights" class="mobile-nav__item" aria-label="Home">
+                <img src="./icon/home.svg" alt="home-icon">
+            </a>
+            <a href="#highlights" class="mobile-nav__item" aria-label="Rocket">
+                <img src="./icon/rocket_launch.svg" alt="rocket-icon">
+            </a>
+            <a href="#faq" class="mobile-nav__item" aria-label="FAQ">
+                <img src="./icon/live_help.svg" alt="help-icon">
+            </a>
+            <a href="#contact" class="mobile-nav__item" aria-label="User">
+                <img src="./icon/person_pin.svg" alt="person-icon">
+            </a>
+        </nav>
+    </footer>
 
 </body>
 
