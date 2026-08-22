@@ -34,12 +34,12 @@ h3 {
     background-color: #4EA487;
 }
 
-.header > img {
+.header>img {
     height: 72px;
 }
 
 .article-text {
-    font-size: 1.5rem;
+    font-size: 1.75rem;
     color: #3D3D3D;
     padding-bottom: 88px;
 }
@@ -49,7 +49,7 @@ h3 {
     gap: 72px;
 }
 
-.nav-bar > a {
+.nav-bar>a {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
@@ -90,9 +90,11 @@ h3 {
 .nav-highlights::after {
     background-image: url('../assets/icon/underline_highlights.png');
 }
+
 .nav-faq::after {
     background-image: url('../assets/icon/underline_faq.png');
 }
+
 .nav-contact::after {
     background-image: url('../assets/icon/underline_contact.png');
 }
@@ -118,7 +120,7 @@ h3 {
 }
 
 .landing-article {
-    font-size: 1.75rem;
+    font-size: 2rem;
     color: #54370D;
     line-height: 1.2;
 }
@@ -180,6 +182,76 @@ h3 {
     padding-bottom: 88px;
 }
 
+.statics {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 42px;
+    padding-bottom: 88px;
+}
+
+.statics h3 {
+    display: flex;
+    justify-content: center;
+}
+
+.statics-text {
+    font-size: 1.75rem;
+    color: #3D3D3D;
+}
+
+.activity-graph {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50%;
+    height: 950px;
+    padding: 24px;
+}
+
+.accommodation-graph {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    width: 50%;
+    height: 950px;
+    padding: 24px;
+}
+
+.follow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: 'Arima';
+    font-size: 2rem;
+    text-align: center;
+    gap: 40px;
+
+    position: relative;
+}
+
+.vector-share {
+    position: absolute;
+    top: 64px;
+    left: 420px;
+}
+
+.button-share {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 24px;
+    border-radius: 40px;
+
+    background-color: #4EA487;
+    color: #F1C953;
+    font-size: 1.75rem;
+}
+
+
 .footer {
     display: flex;
     justify-content: space-between;
@@ -193,7 +265,7 @@ h3 {
 .footer-nav {
     display: flex;
     gap: 72px;
-    
+
     color: white;
 }
 
@@ -227,7 +299,7 @@ h3 {
     height: 32px;
 }
 
-.footer-links img:hover{
+.footer-links img:hover {
     box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 0.19);
     border-radius: 5px;
 }
