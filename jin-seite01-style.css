@@ -29,7 +29,7 @@ html {
     /* 24px - Subheading */
     --font-xl: 2rem;
     /* 32px - Section title */
-    --font-xxl: 3rem;
+    --font-xxl: 2.5rem;
     /* 48px - Main heading */
 
     /* Brand Colors */
@@ -67,7 +67,7 @@ h4,
 }
 
 /* Main wrapper constraining the max width of the website */
-.page-container {
+.page-wrapper {
     width: 100%;
     max-width: 1440px;
     background-color: #FFFFFF;
@@ -95,13 +95,13 @@ li {
 ========================================================= */
 .header {
     background-color: var(--c-primary);
-    padding: 1rem 0;
+    padding: 0.5rem 0;
 }
 
 .header__container {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 2.5rem;
+    padding: 0 1rem;
     display: flex;
     justify-content: space-between;
     /* Pushes logo left, nav right */
@@ -115,7 +115,7 @@ li {
     font-weight: 800;
     display: flex;
     align-items: center;
-    gap: 0.5rem;
+    gap: 0.75rem;
     text-decoration: none;
 }
 
@@ -362,7 +362,7 @@ li {
     background-repeat: no-repeat;
     background-color: var(--c-primary);
 
-    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.08);
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
     border-radius: 0.5rem;
 
     /* 3D Transform properties for accordion effect */
@@ -456,6 +456,41 @@ li {
     font-weight: 700;
     color: var(--c-primary);
 }
+
+
+/* =========================================================
+   4.5 Video Section (Responsive 16:9 Youtube Embed)
+========================================================= */
+.video-section {
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto 4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    /* 16:9 비율 유지 */
+    height: 0;
+    overflow: hidden;
+    border-radius: 0.5rem 3.5rem 0.5rem 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+    background-color: #000;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
 
 
 /* =========================================================
@@ -612,8 +647,11 @@ li {
 
     .header__logo {
         justify-content: center;
-        font-size: 0;
         /* Hides the text, showing only the logo image */
+    }
+
+    .header__logo span {
+        display: none;
     }
 
     .header__logo-img {
@@ -653,7 +691,7 @@ li {
         overflow: hidden;
         /* Hides items outside the container block */
         border-radius: 1rem;
-        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.12);
+        box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
         justify-content: flex-start;
         /* Aligns items linearly */
     }
@@ -806,6 +844,7 @@ li {
         width: 100%;
         padding: 0 1rem;
     }
+   
 
     .mobile-nav__item img {
         width: 32px;
@@ -820,4 +859,6 @@ li {
 .city-list,
 .itinerary-section {
     border-radius: 0.5rem 3.5rem 0.5rem 0.5rem;
+    box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
+
 }
