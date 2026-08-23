@@ -260,7 +260,7 @@ li {
     display: flex;
     align-items: center;
     gap: 0.4rem;
-    font-size: 0.9rem;
+    font-size: 0.7rem;
     color: var(--c-primary);
     font-weight: 400;
 }
