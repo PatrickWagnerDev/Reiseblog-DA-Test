@@ -1,5 +1,5 @@
 body {
-    font-family: 'Palanquin';
+    font-family: var(--font-body);
 }
 
 main {
@@ -9,7 +9,7 @@ main {
 }
 
 h1 {
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     font-weight: bold;
     font-size: 4rem;
     color: #F1C953;
@@ -18,14 +18,14 @@ h1 {
 
 h2 {
     font-size: 2.5rem;
-    color: #4EA487;
+    color: var(--c-accent);
     padding-bottom: 16px;
 }
 
 h3 {
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     font-size: 2rem;
-    color: #54370D;
+    color: var(--c-accent);
     padding-bottom: 24px;
 }
 
@@ -37,7 +37,7 @@ h3 {
     padding: 24px max(calc((100% - 1440px)/2), 96px);
     gap: 102px;
 
-    background-color: #4EA487;
+    background-color: var(--c-primary);
 }
 
 .header>img {
@@ -46,7 +46,7 @@ h3 {
 
 .article-text {
     font-size: 1.75rem;
-    color: #3D3D3D;
+    color:  var(--c-primary);
     padding-bottom: 88px;
 }
 
@@ -60,7 +60,7 @@ h3 {
     font-weight: bold;
     color: white;
 
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     text-decoration: none;
 }
 
@@ -127,7 +127,7 @@ h3 {
 
 .landing-article {
     font-size: 2rem;
-    color: #54370D;
+    color:  var(--c-primary);
     line-height: 1.2;
 }
 
@@ -136,7 +136,7 @@ h3 {
     align-items: center;
     gap: 32px;
     font-size: 1rem;
-    color: #54370D;
+    color: var(--c-primary);
     padding-top: 40px;
 }
 
@@ -148,9 +148,9 @@ h3 {
 }
 
 .author-card {
-    background-color: #4EA48733;
+    background-color: var(--c-secondary);
     width: 480px;
-    color: #54370D;
+    color: var(--c-primary);
 
     display: flex;
     flex-direction: column;
@@ -165,7 +165,7 @@ h3 {
 }
 
 .author-name {
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     font-size: 1.2rem;
     font-weight: bold;
     line-height: 80%;
@@ -173,7 +173,7 @@ h3 {
 }
 
 .author-job {
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     font-size: 1.2rem;
 }
 
@@ -203,7 +203,7 @@ h3 {
 
 .statics-text {
     font-size: 1.75rem;
-    color: #3D3D3D;
+    color: var(--c-primary);
 }
 
 .activity-graph {
@@ -230,14 +230,18 @@ h3 {
     display: flex;
     flex-direction: column;
     align-items: center;
-    font-family: 'Arima';
+    font-family: var(--font-heading);
     font-size: 2rem;
     text-align: center;
     gap: 40px;
 
-    width: 650px;
+    width: 680px;
 
     position: relative;
+}
+
+.follow-text {
+    color:  var(--c-primary);
 }
 
 .vector-share {
@@ -254,7 +258,7 @@ h3 {
     padding: 8px 24px;
     border-radius: 40px;
 
-    background-color: #4EA487;
+    background-color: var(--c-primary);
     color: #F1C953;
     font-size: 1.75rem;
 }
@@ -279,7 +283,7 @@ h3 {
     padding: 8px 24px;
     border-radius: 40px;
 
-    background-color: #4EA487;
+    background-color: var(--c-primary);
     color: #F1C953;
     font-size: 1.75rem;
 }
@@ -292,7 +296,7 @@ h3 {
 }
 
 .button-links a {
-    color: #4EA487;
+    color: var(--c-primary);
 }
 
 .follow-section:focus-within .button-share {
@@ -310,7 +314,7 @@ h3 {
 
     padding: 48px max(calc((100% - 1440px)/2), 88px);
 
-    background-color: #4EA487;
+    background-color: var(--c-primary);
 }
 
 .footer-nav {
