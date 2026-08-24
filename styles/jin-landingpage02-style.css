@@ -154,6 +154,20 @@ h4,
     overflow: hidden;
 }
 
+/* --- 공통 타이틀 줄별 색상 규칙 --- */
+.title-line--india {
+    color: var(--c-accent);      /* 1st: 오렌지 */
+}
+
+.title-line--europe {
+    color: var(--c-buttonpoint); /* 2nd: 옐로우(골드) */
+}
+
+.title-line--seoul {
+    color: var(--c-primary);     /* 3rd: 네이비 */
+}
+
+/* 1. 인트로 애니메이션 텍스트 */
 .hero__intro-text {
     position: absolute;
     top: 50%;
@@ -171,7 +185,6 @@ h4,
 
     font-size: var(--font-xxxl);
     font-weight: 700;
-    color: var(--c-title);
     z-index: 10;
     animation: fadeOutIntro 0.5s ease-in-out 3.2s forwards;
 }
@@ -196,6 +209,7 @@ h4,
     animation-delay: 1.9s;
 }
 
+/* 2. 히어로 카드 영역 */
 .hero__card {
     display: grid;
     grid-template-columns: 2fr 3fr;
