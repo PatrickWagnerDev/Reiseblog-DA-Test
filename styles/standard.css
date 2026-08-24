@@ -1,0 +1,13 @@
+/* Reset default margins and paddings, ensure padding is included in element's total width/height */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    /* Enables smooth scrolling for anchor links */
+    font-size: 100%;
+    /* Default browser font size (usually 16px) */
+}
