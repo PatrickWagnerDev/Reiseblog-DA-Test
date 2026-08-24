@@ -4,20 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dev-Meeting-5 Live</title>
+    <title>Travel Blog - Home</title>
 
+    <link rel="icon" href="./assets/image/logo-s.png" type="image/png">
+
+    <!-- Linking the external CSS stylesheet -->
     <link rel="stylesheet" href="./styles/variables.css">
     <link rel="stylesheet" href="./styles/standard.css">
     <link rel="stylesheet" href="./styles/fonts.css">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
 
-    <!-- Main Page Wrapper Container Creator: Jin-->
+    <!-- Main Page Wrapper Container -->
     <div class="page-wrapper">
 
-        <!-- Header Component Section Creator: Jin -->
+        <!-- Header Component Section -->
         <header class="header">
             <div class="header__container">
                 <a href="#" class="header__logo">
@@ -36,20 +40,22 @@
             </div>
         </header>
 
-        <!-- Hero Web Section Component Creator: Jin -->
+        <!-- Hero Web Section Component -->
         <section class="hero">
+            <!-- 1. 중앙 인트로 시퀀스 텍스트 -->
             <div class="hero__intro-text">
-                <span>Sunrise in India,</span>
-                <span>Noon in Europe,</span>
-                <span>Midnight in Seoul.</span>
+                <span class="title-line--india">Sunrise in India,</span>
+                <span class="title-line--europe">Noon in Europe,</span>
+                <span class="title-line--seoul">Midnight in Seoul.</span>
             </div>
 
+            <!-- 2. 히어로 카드 내부 타이틀 -->
             <div class="hero__card">
                 <div class="hero__content">
                     <h1 class="hero__title">
-                        Sunrise in India,<br>
-                        Noon in Europe,<br>
-                        Midnight in Seoul.
+                        <span class="title-line--india">Sunrise in India,</span><br>
+                        <span class="title-line--europe">Noon in Europe,</span><br>
+                        <span class="title-line--seoul">Midnight in Seoul.</span>
                     </h1>
                     <p class="hero__desc">
                         A continuous voyage through time and space. Discover the world’s hidden pulse through the lens
@@ -61,57 +67,55 @@
             </div>
         </section>
 
-        <!-- Main Home Content Section Creator: Jin -->
-        <main class="main-content">
+        <!-- Main Home Content Section -->
+        <main class="main-content" id="highlights">
 
-            <article id="highlights">
+            <div class="section-header">
+                <h2 class="section-header__title">📌 Highlights</h2>
+                <p class="section-header__desc">
+                    From vibrant Asian nightscapes to historic European landscapes, discover our creators' top
+                    destinations.
+                </p>
+            </div>
 
-                <div class="section-header">
-                    <h2 class="section-header__title">📌 Highlights</h2>
-                    <p class="section-header__desc">
-                        From vibrant Asian nightscapes to historic European landscapes, discover our creators' top
-                        destinations.
-                    </p>
-                </div>
+            <!-- Slider Component -->
+            <div class="slider">
+                <input type="radio" name="slider" id="slide1" class="slider__input" checked>
+                <input type="radio" name="slider" id="slide2" class="slider__input">
+                <input type="radio" name="slider" id="slide3" class="slider__input">
 
-                <!-- Slider Component Creator: Jin -->
-                <div class="slider">
-                    <input type="radio" name="slider" id="slide1" class="slider__input" checked>
-                    <input type="radio" name="slider" id="slide2" class="slider__input">
-                    <input type="radio" name="slider" id="slide3" class="slider__input">
-
-                    <div class="slider__wrapper">
-                        <a href="jin-seite01.html" class="slider__slide slider__slide--one">
-                            <div class="slider__text">
-                                <h3 class="slider__title">Seoul, Midnight Pulse</h3>
-                                <p class="slider__desc">Discover local stories with Jini</p>
-                            </div>
-                        </a>
-
-                        <div class="slider__slide slider__slide--two">
-                            <div class="slider__text">
-                                <h3 class="slider__title">India, Sunrise Voyage</h3>
-                                <p class="slider__desc">Discover local stories with Neelima</p>
-                            </div>
+                <div class="slider__wrapper">
+                    <a href="jin-seite01.html" class="slider__slide slider__slide--one">
+                        <div class="slider__text">
+                            <h3 class="slider__title">Seoul, Midnight Pulse</h3>
+                            <p class="slider__desc">Discover local stories with Jini</p>
                         </div>
+                    </a>
 
-                        <div class="slider__slide slider__slide--three">
-                            <div class="slider__text">
-                                <h3 class="slider__title">Europe, Noon Passage</h3>
-                                <p class="slider__desc">Discover local stories with Patrick</p>
-                            </div>
+                    <div class="slider__slide slider__slide--two">
+                        <div class="slider__text">
+                            <h3 class="slider__title">India, Sunrise Voyage</h3>
+                            <p class="slider__desc">Discover local stories with Neelima</p>
                         </div>
                     </div>
 
-                    <!-- Dots navigation Creator: Jin -->
-                    <div class="slider__dots">
-                        <label for="slide1" class="slider__dot slider__dot--one"></label>
-                        <label for="slide2" class="slider__dot slider__dot--two"></label>
-                        <label for="slide3" class="slider__dot slider__dot--three"></label>
-                    </div>
+                    <a href="Patrick.html" class="slider__slide slider__slide--three">
+                        <div class="slider__text">
+                            <h3 class="slider__title">Europe, Noon Passage</h3>
+                            <p class="slider__desc">Discover local stories with Patrick</p>
+                        </div>
+                    </a>
                 </div>
 
-            </article>
+                <!-- Dots navigation -->
+                <div class="slider__dots">
+                    <label for="slide1" class="slider__dot slider__dot--one"></label>
+                    <label for="slide2" class="slider__dot slider__dot--two"></label>
+                    <label for="slide3" class="slider__dot slider__dot--three"></label>
+                </div>
+            </div>
+
+
 
             <!-- FAQ Details Creator: Patrick -->
             <article class="faq-section" id="faq">
@@ -130,7 +134,9 @@
                             What’s the story behind my travel blog?
                         </summary>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam laboriosam aut repellendus aliquam, dignissimos molestias iure.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate
+                            voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam
+                            laboriosam aut repellendus aliquam, dignissimos molestias iure.
                         </p>
                     </details>
 
@@ -139,7 +145,9 @@
                             How do I plan, document, and share my travels?
                         </summary>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam laboriosam aut repellendus aliquam, dignissimos molestias iure.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate
+                            voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam
+                            laboriosam aut repellendus aliquam, dignissimos molestias iure.
                         </p>
                     </details>
 
@@ -148,7 +156,9 @@
                             How can brands, companies, or fellow creators collaborate with me or get in touch?
                         </summary>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam laboriosam aut repellendus aliquam, dignissimos molestias iure.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate
+                            voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam
+                            laboriosam aut repellendus aliquam, dignissimos molestias iure.
                         </p>
                     </details class="faq-info">
 
@@ -157,7 +167,9 @@
                             How can readers support this blog and the work behind it?
                         </summary>
                         <p>
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam laboriosam aut repellendus aliquam, dignissimos molestias iure.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo atque cupiditate
+                            voluptatum temporibus ut non quam dolor mollitia beatae possimus corrupti voluptate nam
+                            laboriosam aut repellendus aliquam, dignissimos molestias iure.
                         </p>
                     </details>
 
@@ -167,7 +179,7 @@
 
         </main>
 
-        <!-- Footer Component Section Creator: Jin -->
+        <!-- Footer Component Section -->
         <footer class="footer">
             <div class="footer__container">
                 <div class="footer__text-group">
@@ -185,7 +197,6 @@
         </footer>
     </div>
 
-    <!-- Mobile Footer Component Section Creator: Jin -->
     <footer class="footer--mobile">
         <nav class="mobile-nav">
             <a href="#highlights" class="mobile-nav__item" aria-label="Home">

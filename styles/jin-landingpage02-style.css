@@ -439,6 +439,86 @@ a.slider__slide:hover::before {
     border-radius: 0.5rem;
 }
 
+
+/* =========================================================
+   7. FAQ - Detaillist // Creator: Patrick
+========================================================= */
+
+.faq-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
+}
+
+.faq-header {
+    display: flex;
+    gap: 16px;
+}
+
+.faq-header h2 {
+    font-size: var(--font-xl);
+}
+
+.faq-header img {
+    width: 100%;
+}
+
+.faq-section details {
+    background-color: var(--c-secondary);
+    width: 1200px;
+    padding: 16px;
+    margin-top: 16px;
+    border-radius: 5px;
+    text-align: start;
+}
+
+.faq-section p {
+    background-color: white;
+    padding: 4px;
+    border-radius: 5px;
+}
+
+summary {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+summary::-webkit-details-marker {
+    display: none;
+}
+
+summary::after {
+    content: url("assets/image/arrow_forward_ios.svg");
+    transition: transform 255ms ease-in;
+}
+
+details[open] summary::after {
+    transform: rotate(180deg);
+}
+
+@media screen and (min-width: 900px) and (max-width: 1300px) {
+    .faq-section details {
+        width: 800px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 899px) {
+    .faq-section details {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 539px) {
+    .faq-section details {
+        width: 300px;
+    }
+}
+
 /* =========================================================
    8. Footer Components (Desktop Standard)
 ========================================================= */
