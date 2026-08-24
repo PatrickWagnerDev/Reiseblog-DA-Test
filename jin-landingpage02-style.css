@@ -24,7 +24,7 @@ html {
     --font-xl: 2rem;
     /* 32px - Section title */
     --font-xxl: 2.5rem;
-    /* 48px - Main large title */
+    /* 40px - Main large title */
 
     /* Brand colors */
     --c-primary: #083D77;
@@ -64,7 +64,7 @@ h4,
 .page-wrapper {
     width: 100%;
     max-width: 1440px;
-    background-color: #FFFFFF;
+    background-color: white;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
     /* 2rem = 32px */
 }
@@ -171,7 +171,7 @@ h4,
 
 .nav__link,
 .nav__link:visited {
-    color: #FFFFFF;
+    color: white;
     text-decoration: none;
     font-weight: 600;
     font-size: var(--font-base);
@@ -191,20 +191,10 @@ h4,
 .hero {
     position: relative;
     width: 100%;
-    min-height: 520px;
-    background-color: var(--c-buttonpoint);
-    overflow: hidden;
-}
-
-
-.hero {
-    position: relative;
-    width: 100%;
     min-height: clamp(450px, 50vh, 520px);
     background-color: var(--c-buttonpoint);
     overflow: hidden;
 }
-
 
 .hero__intro-text {
     position: absolute;
@@ -451,7 +441,7 @@ a.slider__slide {
 
 a.slider__slide:hover .slider__title {
     text-decoration: underline;
-    color: #FFFFFF;
+    color: white;
 }
 
 a.slider__slide:hover::before {
@@ -487,7 +477,7 @@ a.slider__slide:hover::before {
 .slider__title {
     font-size: var(--font-lg);
     margin-bottom: 0.5rem;
-    color: #F4D35E;
+    color: var(--c-buttonpoint);
 }
 
 /* Move slide based on radio button selection */
