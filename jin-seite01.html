@@ -245,7 +245,18 @@
                         Follow me for more content like this, and<br>
                         share the article with your friends!
                     </p>
-                    <img src="./assets/icon/share-button.png" alt="Share" class="share-img">
+                    <details>
+                        <!-- 클릭할 공유 버튼 -->
+                        <summary class="share-btn">Share</summary>
+
+                        <!-- 버튼 아래/오른쪽에 나타날 링크들 -->
+                        <div class="share-links">
+                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank"
+                                class="link-item linkedin">LinkedIn</a>
+                            <a href="https://api.whatsapp.com/send?text=YOUR_URL" target="_blank"
+                                class="link-item whatsapp">WhatsApp</a>
+                        </div>
+                    </details>
                 </section>
             </div>
         </main>
