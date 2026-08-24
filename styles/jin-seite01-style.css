@@ -1,92 +1,3 @@
-/* =========================================================
-   1. Global Reset & Theme Variables
-========================================================= */
-
-/* Reset default margins and paddings, ensure padding is included in element's total width/height */
-* {
-    box-sizing: border-box;
-    margin: 0;
-    padding: 0;
-}
-
-html {
-    scroll-behavior: smooth;
-    /* Enables smooth scrolling for anchor links */
-    font-size: 100%;
-    /* Default browser font size (usually 16px) */
-}
-
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Arima';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/fonts/arima-v7-latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* arima-700 - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Arima';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../assets/fonts/arima-v7-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* palanquin-regular - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Palanquin';
-    font-style: normal;
-    font-weight: 400;
-    src: url('../assets/fonts/palanquin-v17-latin-regular.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* palanquin-700 - latin */
-@font-face {
-    font-display: swap;
-    /* Check https://developer.mozilla.org/en-US/docs/Web/CSS/@font-face/font-display for other options. */
-    font-family: 'Palanquin';
-    font-style: normal;
-    font-weight: 700;
-    src: url('../assets/fonts/palanquin-v17-latin-700.woff2') format('woff2');
-    /* Chrome 36+, Opera 23+, Firefox 39+, Safari 12+, iOS 10+ */
-}
-
-/* CSS Variables for easy theme management and consistency */
-:root {
-    /* Font Variables */
-    --font-heading: 'Arima', cursive;
-    --font-body: 'Palanquin', sans-serif;
-
-    /* Font size scale */
-    --font-base: 1rem;
-    /* 16px - Base text */
-    --font-lg: 1.5rem;
-    /* 24px - Subheading */
-    --font-xl: 2rem;
-    /* 32px - Section title */
-    --font-xxl: 2.5rem;
-    /* 48px - Main heading */
-
-    /* Brand Colors */
-    --c-primary: #083D77;
-    /* Regal Navy (Main text and elements) */
-    --c-secondary: #EBEBD3;
-    /* Beige (Background accents) */
-    --c-accent: #F95738;
-    /* Tomato (Highlight points) */
-    --c-buttonpoint: #F4D35E;
-    /* Royal Gold (Buttons, hovers) */
-    --c-hoverpoint: #EE964B;
-    /* Sandy Brown */
-}
 
 /* Base Body Styles */
 body {
@@ -275,9 +186,9 @@ li {
 }
 
 .intro-title {
-    font-size: var(--font-xxl);
+    font-size: var(--font-xxxl);
     font-weight: 800;
-    color: var(--c-primary);
+    color: var(--c-title);
     line-height: 1.25;
     margin-bottom: 1.2rem;
 }
@@ -670,11 +581,6 @@ li {
    9. Media Queries for Mobile Screens (max-width: 768px)
 ========================================================= */
 @media (max-width: 768px) {
-
-    /* Scale down the base font size slightly to fit small screens */
-    html {
-        font-size: 87.5%;
-    }
 
     /* Mobile Header Layout (Logo Centered, Links Hidden) */
     .header {
