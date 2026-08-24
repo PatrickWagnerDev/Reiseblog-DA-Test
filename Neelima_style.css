@@ -211,8 +211,7 @@ li {
     line-height: 1.6;
 }
 
-.Header,
- .Indeien_Video {
+.Header {
 
      position: relative;
      display: flex;
@@ -223,64 +222,6 @@ li {
      padding: 0 1.5rem;
 
  }
-/* =========================================================
-           3. Video section
-========================================================= */
-.section-title {
-    text-align: center;
-    margin-bottom: 4rem;
-}
-
-.section-title h3 {
-    font-size: var(--font-xl);
-    font-weight: 800;
-    color: var(--c-primary);
-}
-
-
-.Video_Section {
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-.Video_Section {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-    gap: 1.5rem;
-    align-items: center;
-
-    max-width: var(--content-max-width);
-    margin: 0 auto;
-    padding: 40px 0;
-}
-
-.Indeien_Video video {
-    width: 100%;
-    border-radius: 55px;
-    width: 930px;
-    height: 520px;
-    gap: 10px;
-
-}
-
-/* .play-btn {
-
-     position: absolute;
-     display: flex;
-     align-items: center;
-     top: 50%;
-     left: 50%;
-     transform: translate(-50%, -50%);
-     width: 150px;
-     height: 150px;
-     cursor: pointer;
-
-     
- } */
-
-
- 
 .Varanasi-caption {
     width: 100%;
     max-width: 1200px;
