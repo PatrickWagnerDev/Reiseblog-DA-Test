@@ -275,12 +275,14 @@ li {
 }
 
 .intro-title {
-    font-size: var(--font-xl);
+    font-size: var(--font-xxl);
     font-weight: 800;
     color: var(--c-primary);
     line-height: 1.25;
     margin-bottom: 1.2rem;
 }
+
+
 
 .intro-summary {
     font-size: var(--font-base);
