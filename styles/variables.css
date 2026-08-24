@@ -1,0 +1,28 @@
+/* Variables Creator: Jin */
+:root {
+    /* Fonts */
+    --font-heading: 'Arima';
+    --font-body: 'Palanquin';
+
+    /* Font size scale */
+    --font-base: 1rem;
+    /* 16px - Base text */
+    --font-lg: 1.5rem;
+    /* 24px - Subheading */
+    --font-xl: 2rem;
+    /* 32px - Section title */
+    --font-xxl: 2.5rem;
+    /* 48px - Main heading */
+
+    /* Brand Colors */
+    --c-primary: #083D77;
+    /* Regal Navy (Main text and elements) */
+    --c-secondary: #EBEBD3;
+    /* Beige (Background accents) */
+    --c-accent: #F95738;
+    /* Tomato (Highlight points) */
+    --c-buttonpoint: #F4D35E;
+    /* Royal Gold (Buttons, hovers) */
+    --c-hoverpoint: #EE964B;
+    /* Sandy Brown */
+}
