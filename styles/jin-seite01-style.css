@@ -509,114 +509,88 @@ li {
 /* =========================================================
    7. Share Section
 ========================================================= */
+/* 1. Share 전체 컨테이너 */
 .share-section {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: 3rem auto;
-    padding: 0 1rem;
     gap: 1.25rem;
 }
 
 .share-section__text {
-    font-size: var(--font-base);
-    font-weight: 500;
+    font-size: var(--font-xl);
+    font-family: var(--font-heading);
+    font-weight: 400;
     color: var(--c-primary);
     line-height: 1.6;
 }
 
-/* details 영역: 아래로 펼쳐져도 주변 컨텐츠가 밀리지 않도록 고정 높이 확보 */
+/* 2. absolute 위치 기준이 되는 details */
 details.share-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    min-height: 140px; /* 메뉴가 열릴 공간을 미리 넉넉히 확보 */
+    position: relative;
 }
 
-/* Share 메인 버튼 스타일 */
+/* 3. 메인 Share 버튼 */
 summary.share-btn {
-    display: inline-flex;
+    display: flex;
     align-items: center;
     justify-content: center;
-    width: 140px; /* 버튼 기준 너비 설정 */
+    width: 140px;
     padding: 0.65rem 0;
     background-color: var(--c-primary);
-    color: #FFFFFF;
+    color: #fff;
     font-family: var(--font-body);
     font-size: var(--font-base);
     font-weight: 700;
     border-radius: 2rem;
     cursor: pointer;
-    list-style: none; /* 기본 화살표 숨김 */
+    list-style: none;
     user-select: none;
-    transition: background-color 0.2s ease, transform 0.2s ease;
+    transition: 0.2s;
 }
 
-/* Safari / Chrome 기본 화살표 제거 */
-summary.share-btn::-webkit-details-marker {
-    display: none;
-}
+summary.share-btn::-webkit-details-marker { display: none; }
 
-/* Share 버튼 마우스 호버 */
 summary.share-btn:hover {
     background-color: var(--c-buttonpoint);
     color: var(--c-primary);
     transform: translateY(-2px);
 }
 
-/* Share 버튼 밑으로 열리는 링크 컨테이너 */
+/* 4. 가로로 펼쳐지는 띄움 메뉴 (밀림 방지) */
 .share-links {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
     display: flex;
-    flex-direction: column; /* 아래로 수직 병렬 배치 */
-    align-items: center;
-    gap: 0.4rem;
+    gap: 0.5rem;
     margin-top: 0.6rem;
-    animation: fadeInDown 0.25s ease-in-out;
+    white-space: nowrap;
+    z-index: 10;
 }
 
-/* 소셜 링크 버튼: Share 버튼의 절반 크기감으로 조절 */
+/* 5. 소셜 링크 버튼 */
 .link-item {
     display: inline-flex;
-    align-items: center;
     justify-content: center;
-    width: 90px; /* Share 버튼(140px) 대비 작고 아담한 너비 */
-    padding: 0.35rem 0; /* Share 버튼 절반 수준의 높이감 */
+    width: 80px;
+    padding: 0.35rem 0;
     border-radius: 1rem;
-    font-size: 0.75rem; /* 절반 느낌에 맞춘 아담한 폰트 크기 */
+    font-size: 0.75rem;
     font-weight: 700;
-    color: #FFFFFF;
+    color: #fff;
     text-decoration: none;
-    white-space: nowrap;
-    box-shadow: 0 0.15rem 0.4rem rgba(0, 0, 0, 0.1);
-    transition: transform 0.2s ease, filter 0.2s ease;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: 0.2s;
 }
 
-.link-item:hover {
-    transform: translateY(-1px);
-    filter: brightness(1.1);
-}
+.link-item:hover { transform: translateY(-1px); filter: brightness(1.1); }
+.link-item.linkedin { background-color: #0A66C2; }
+.link-item.whatsapp { background-color: #25D366; }
 
-/* 소셜 브랜드 고유 컬러 */
-.link-item.linkedin {
-    background-color: #0A66C2;
-}
-
-.link-item.whatsapp {
-    background-color: #25D366;
-}
-
-/* 아래로 자연스럽게 등장하는 애니메이션 */
-@keyframes fadeInDown {
-    from {
-        opacity: 0;
-        transform: translateY(-6px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
 
 /* =========================================================
    8. Footer Components (Desktop Standard)

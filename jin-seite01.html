@@ -245,18 +245,21 @@
                         Follow me for more content like this, and<br>
                         share the article with your friends!
                     </p>
-                    <details>
-                        <!-- 클릭할 공유 버튼 -->
-                        <summary class="share-btn">Share</summary>
 
-                        <!-- 버튼 아래/오른쪽에 나타날 링크들 -->
-                        <div class="share-links">
-                            <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank"
-                                class="link-item linkedin">LinkedIn</a>
-                            <a href="https://api.whatsapp.com/send?text=YOUR_URL" target="_blank"
-                                class="link-item whatsapp">WhatsApp</a>
-                        </div>
-                    </details>
+                    <!-- 기준점이 될 감싸는 컨테이너 -->
+                    <div class="share-wrapper">
+                        <details class="share-details">
+                            <summary class="share-btn">Share</summary>
+
+                            <!-- 절대 위치(absolute)로 띄워질 링크 박스 -->
+                            <div class="share-links">
+                                <a href="https://www.linkedin.com/sharing/share-offsite/?url=YOUR_URL" target="_blank"
+                                    rel="noopener" class="link-item linkedin">LinkedIn</a>
+                                <a href="https://api.whatsapp.com/send?text=YOUR_URL" target="_blank" rel="noopener"
+                                    class="link-item whatsapp">WhatsApp</a>
+                            </div>
+                        </details>
+                    </div>
                 </section>
             </div>
         </main>
