@@ -44,32 +44,21 @@ h4,
 ========================================================= */
 
 
+/* 파란색 배경을 화면 전체(100%)로 채우는 바깥 영역 */
 .header {
     width: 100%;
+    background-color: var(--c-primary);
+}
+
+.header-content {
     max-width: 1440px;
     margin: 0 auto;
     padding: 24px 96px;
-    
     display: flex;
     justify-content: flex-start;
     align-items: center;
     gap: 80px;
-
-    background-color: var(--c-primary);
-    box-sizing: border-box;
 }
-
-.header__container {
-    max-width: 1440px;
-    width: 100%;
-    margin: 0 auto;
-    padding: 0 96px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    box-sizing: border-box;
-}
-
 .header__logo {
     color: white;
     font-size: var(--font-lg);
@@ -606,7 +595,7 @@ details[open] summary::after {
     max-width: 1200px;
     width: 100%;
     margin: 0 auto;
-
+    box-sizing: border-box;
 }
 
 .Contact_row {
@@ -617,81 +606,67 @@ details[open] summary::after {
     margin-bottom: 24px;
 
     font-family: Arima;
-    font-style: Bold;
+    font-weight: bold;
     font-size: 18px;
     line-height: 120%;
 
     color: var(--c-primary);
 }
 
-.Contact_row>img {
-
+.Contact_row > img {
     width: 48px;
     height: 48px;
-}
-
-.Contact_form>h1 {
-    margin-bottom: 24px;
-
 }
 
 .sub_lines {
     font-family: Palanquin;
     font-weight: 500;
-    font-style: Medium;
     font-size: 20px;
     text-align: center;
 }
 
-
 .questions-container {
-
     padding: 50px 30px 0px 30px;
     width: 100%;
     max-width: 900px;
     display: flex;
     flex-direction: column;
     gap: 40px;
-
     margin: 0 auto;
+    box-sizing: border-box;
 }
 
-/* పక్కపక్కన రావడం కోసం Flexbox */
 .question-row {
     display: flex;
     gap: 40px;
-    /* నేమ్, ఈమెయిల్ మధ్య ఖాళీ */
-
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .field {
     flex: 1;
     display: flex;
     flex-direction: column;
+    box-sizing: border-box;
 }
 
-label {
+.field label {
     font-size: 18px;
-
-    /* color: #333; */
     margin-bottom: 25px;
-    /* టెక్స్ట్ కి, కింద గీతకి మధ్య ఖాళీ */
 }
 
-
-/* బోర్డర్స్ తీసేసి కేవలం కింది గీత మాత్రమే ఉంచడం */
-input {
+.field input {
+    width: 100%;
     border: none;
     border-bottom: 1.5px solid #a8a095;
-    /* లైన్ కలర్ */
     outline: none;
     background: transparent;
     font-size: 16px;
     padding-bottom: 8px;
+    box-sizing: border-box;
 }
 
-/* టైప్ చేసేటప్పుడు డార్క్ లైన్ రావడానికి */
-input:focus {
+.field input:focus {
     border-bottom-color: #000;
 }
 
@@ -701,11 +676,11 @@ input:focus {
     align-items: center;
     gap: 32px;
     margin-top: 40px;
-
+    width: 100%;
+    box-sizing: border-box;
 }
 
-.privacy-checkbox {
-
+.privacy-container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -714,18 +689,250 @@ input:focus {
     color: #5a4e40;
 }
 
-.bottom-section>img {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding-top: 40px;
+/* =========================================================
+   Mobile Viewport Styles (768px and below) for Contact
+========================================================= */
+@media screen and (max-width: 768px) {
 
+    html body article.faq-section,
+    html body .faq-section {
+        padding-left: 16px;
+        padding-right: 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+
+    html body .Contact_form {
+        padding-top: 60px;
+        width: 100%;
+    }
+
+    html body .sub_lines {
+        display: none;
+    }
+
+    html body .questions-container {
+        padding: 24px 0 0 0;
+        width: 100%;
+        max-width: 100%;
+        gap: 32px;
+    }
+
+    html body .question-row {
+        flex-direction: column;
+        gap: 32px;
+        width: 100%;
+    }
+
+    html body .field {
+        width: 100%;
+    }
+
+    html body .field label {
+        font-size: 16px;
+        margin-bottom: 12px;
+    }
+
+    html body .field input {
+        width: 100%;
+    }
+
+    html body .bottom-section {
+        margin-top: 32px;
+        width: 100%;
+    }
+
+    html body .privacy-container {
+        justify-content: flex-start;
+        font-size: 11px;
+        gap: 8px;
+        width: 100%;
+    }
+
+    html body .privacy-container input[type="checkbox"] {
+        flex-shrink: 0;
+    }
+}
+
+
+/* =========================================================
+   Footer Components (Rem & Single Media Query System)
+========================================================= */
+
+.footer {
+    width: 100%;
+    background-color: var(--c-primary);
+    color: white;
+    padding: 3rem 0;
+}
+
+.footer__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.footer-nav {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    color: white;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-base);
+}
+
+.footer-nav p {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
+}
+
+.footer-nav img {
+    height: 1.25rem;
+}
+
+.footer-links {
+    display: flex;
+    gap: 0.75rem;
+}
+
+.footer-links img {
+    width: 1.75rem;
+    height: 1.75rem;
+}
+
+.nav-bar-mobile {
+    display: none;
 }
 
 /* =========================================================
-   9. Footer Components (Desktop Standard)
+   Footer Navigation & Social Links Hover Effects
 ========================================================= */
 
+
+.footer-nav a:hover {
+    font-weight: bold;
+}
+
+
+.footer-links img:hover {
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+    body {
+        padding-bottom: 5.5rem; 
+    }
+
+    .footer {
+        padding: 1.5rem 1rem;
+    }
+
+    .footer__container {
+        padding: 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end; 
+    }
+
+    .footer-nav {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.35rem;
+        font-size: 0.85rem;
+    }
+
+    .footer-nav a {
+        font-size: 0.85rem;
+        color: white;
+        text-decoration: none;
+    }
+
+   
+    .footer-nav a:nth-of-type(1) {
+        order: 1;
+    }
+
+   
+    .footer-nav a:nth-of-type(2) {
+        order: 2;
+    }
+
+  
+    .footer-nav p {
+        order: 3;
+        font-size: 0.85rem;
+        margin: 0;
+        white-space: nowrap;
+        display: flex;
+        align-items: center;
+        gap: 0.3rem;
+    }
+
+    .footer-nav p img {
+        height: 1rem;
+    }
+
+  
+    .footer-links {
+        display: flex;
+        gap: 0.5rem;
+        align-items: center;
+    }
+
+    .footer-links img {
+        width: 1.5rem;
+        height: 1.5rem;
+    }
+
+   
+    .footer--mobile,
+    .nav-bar-mobile {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 5.5rem;
+        background-color: var(--c-buttonpoint);
+        z-index: 9999;
+        justify-content: space-around;
+        align-items: center;
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .mobile-nav__item img {
+        width: 2rem;
+        height: 2rem;
+    }
+}
+
+
+/* =========================================================
+   9. Footer Components (Desktop Standard)-Patrick
+========================================================= */
+/* 
 .footer {
     width: 100%;
     background-color: var(--c-primary);
@@ -789,6 +996,9 @@ input:focus {
     display: none;
 }
 
+
+
+
 @media screen and (min-width: 851px) and (max-width: 1176px) {
 
     .footer-nav {
@@ -840,6 +1050,9 @@ input:focus {
 
 }
 
+
+
+
 @media screen and (max-width: 525px) {
 
     .footer {
@@ -875,9 +1088,9 @@ input:focus {
         bottom: 0;
     }
 
-}
+} */
 
-/* =========================================================
+/* /* =========================================================
    9. Media Query (Mobile Screens)
 ========================================================= */
 @media (max-width: 768px) {
@@ -916,4 +1129,5 @@ input:focus {
         height: clamp(200px, 35vw, 260px);
     }
 
-}
+} 
+
