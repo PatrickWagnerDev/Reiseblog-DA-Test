@@ -229,15 +229,18 @@ h4,
 
 /* --- 공통 타이틀 줄별 색상 규칙 --- */
 .title-line--india {
-    color: var(--c-accent);      /* 1st: 오렌지 */
+    color: var(--c-accent);
+    /* 1st: 오렌지 */
 }
 
 .title-line--europe {
-    color: var(--c-buttonpoint); /* 2nd: 옐로우(골드) */
+    color: var(--c-buttonpoint);
+    /* 2nd: 옐로우(골드) */
 }
 
 .title-line--seoul {
-    color: var(--c-primary);     /* 3rd: 네이비 */
+    color: var(--c-primary);
+    /* 3rd: 네이비 */
 }
 
 /* 1. 인트로 애니메이션 텍스트 */
@@ -722,7 +725,7 @@ input:focus {
 /* =========================================================
    9. Footer Components (Desktop Standard)
 ========================================================= */
-.footer {
+/* .footer {
     background-color: var(--c-primary);
     color: white;
     padding: 1.5rem 0;
@@ -735,7 +738,6 @@ input:focus {
     padding: 0 2.5rem;
     display: flex;
     justify-content: space-between;
-    /* Aligns text left, icons right */
     align-items: center;
 }
 
@@ -756,9 +758,152 @@ input:focus {
     gap: 0.5rem;
 }
 
-/* Hide the mobile sticky footer by default on Desktop */
 .footer--mobile {
     display: none;
+} */
+
+.footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 48px max(calc((100% - 1440px)/2), 88px);
+
+    background-color: var(--c-primary);
+}
+
+.footer-nav {
+    display: flex;
+    gap: 72px;
+
+    color: white;
+}
+
+.footer-nav p {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.footer-nav img {
+    height: 24px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    min-width: 80px;
+}
+
+.footer-nav a:hover {
+    font-weight: bold;
+}
+
+.footer-links {
+    display: flex;
+    gap: 16px;
+}
+
+.footer-links img {
+    height: 32px;
+}
+
+.footer-links img:hover {
+    box-shadow: 2px 2px 2px 2px rgba(255, 255, 255, 0.25);
+    border-radius: 5px;
+}
+
+.nav-bar-mobile {
+    display: none;
+}
+
+@media screen and (min-width: 851px) and (max-width: 1176px) {
+
+    .footer-nav {
+        gap: 42px;
+    }
+
+}
+
+@media screen and (min-width: 744px) and (max-width: 850px) {
+
+    .footer {
+        padding: 48px max(calc((100% - 1440px)/2), 42px);
+    }
+
+    .footer-nav {
+        gap: 42px;
+    }
+
+}
+
+@media screen and (min-width: 526px) and (max-width: 743px) {
+
+    .footer {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+        align-items: flex-end;
+    }
+
+    .footer-nav {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 8px;
+    }
+
+    .footer-nav a {
+        text-align: start;
+    }
+
+    .nav-bar-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 24px 42px;
+
+        background-color: #F1C953;
+
+        position: sticky;
+        bottom: 0;
+    }
+
+}
+
+@media screen and (max-width: 525px) {
+
+    .footer {
+        padding: 24px max(calc((100% - 1440px)/2), 24px);
+        align-items: flex-end;
+    }
+
+    .footer-nav {
+        flex-direction: column-reverse;
+        align-items: flex-start;
+        gap: 8px;
+
+        font-size: 0.8rem;
+    }
+
+    .footer-nav a {
+        text-align: start;
+    }
+
+    .footer-links img {
+        height: 20px;
+    }
+
+    .nav-bar-mobile {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 16px 42px;
+
+        background-color: #F1C953;
+
+        position: sticky;
+        bottom: 0;
+    }
+
 }
 
 /* =========================================================
@@ -805,7 +950,7 @@ input:focus {
     }
 
     /* Standard footer changes to vertical stacking on mobile */
-    .footer {
+    /* .footer {
         padding: 2rem 1.5rem;
     }
 
@@ -821,7 +966,6 @@ input:focus {
     .footer__text-group {
         display: flex;
         flex-direction: column;
-        /* Stacks text links vertically */
         align-items: flex-start;
         gap: 0.4rem;
     }
@@ -844,10 +988,10 @@ input:focus {
     .footer__links img {
         width: 28px;
         height: 28px;
-    }
+    } */
 
     /* Un-hiding the Sticky Mobile App-like Bottom Navigation */
-    .footer--mobile {
+    /* .footer--mobile {
         display: flex !important;
         position: fixed;
         bottom: 0;
@@ -857,13 +1001,11 @@ input:focus {
         height: 88px;
         background-color: var(--c-buttonpoint);
         z-index: 9999;
-        /* Ensures the footer stays on top of all other content */
     }
 
     .mobile-nav {
         display: flex;
         justify-content: space-around;
-        /* Distributes icons evenly */
         align-items: center;
         width: 100%;
         padding: 0 1rem;
@@ -872,5 +1014,5 @@ input:focus {
     .mobile-nav__item img {
         width: 32px;
         height: 32px;
-    }
+    } */
 }
