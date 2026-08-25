@@ -32,7 +32,7 @@ h4,
     font-weight: 700;
     font-size: var(--font-base);
     text-decoration: none;
-    cursor: pointer;
+    cursor: default;
 }
 
 .btn--primary:hover {
@@ -739,20 +739,20 @@ details[open] summary::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 24px;
+    gap: 8px;            
+    margin-bottom: 16px; 
 
-    font-family: Arima;
+    font-family: Arima, sans-serif;
     font-weight: bold;
-    font-size: 18px;
-    line-height: 120%;
+    font-size: 1.25rem; 
+    line-height: 1.2;
 
     color: var(--c-primary);
 }
 
 .Contact_row > img {
-    width: 48px;
-    height: 48px;
+    width: 3rem;        
+    height: 3rem;       
 }
 
 .sub_lines {
@@ -788,8 +788,8 @@ details[open] summary::after {
 }
 
 .field label {
-    font-size: 18px;
-    margin-bottom: 25px;
+    font-size: 1.125rem; /* 18px */
+    margin-bottom: 1.5rem;
 }
 
 .field input {
@@ -798,7 +798,7 @@ details[open] summary::after {
     border-bottom: 1.5px solid #a8a095;
     outline: none;
     background: transparent;
-    font-size: 16px;
+    font-size: 1rem;
     padding-bottom: 8px;
     box-sizing: border-box;
 }
@@ -831,62 +831,57 @@ details[open] summary::after {
 ========================================================= */
 @media screen and (max-width: 768px) {
 
-    html body article.faq-section,
-    html body .faq-section {
-        padding-left: 16px;
-        padding-right: 16px;
+    .faq-section {
+        padding-left: 1rem;
+        padding-right: 1rem;
         width: 100%;
         box-sizing: border-box;
     }
-
-    html body .Contact_form {
-        padding-top: 60px;
+    
+    .Contact_form {
+        padding-top: 3.75rem; /* 60px */
         width: 100%;
     }
 
-    html body .sub_lines {
+    .Contact_row {
+        font-size: 1.125rem; 
+    }
+
+    .Contact_row > img {
+        width: 2rem;   /* 32px */
+        height: 2rem;  /* 32px */
+    }
+    
+    .sub_lines {
         display: none;
     }
-
-    html body .questions-container {
-        padding: 24px 0 0 0;
+  
+    .questions-container {
+        padding: 1.5rem 0 0 0;
         width: 100%;
-        max-width: 100%;
-        gap: 32px;
+        gap: 2rem;
     }
 
-    html body .question-row {
+    .question-row {
         flex-direction: column;
-        gap: 32px;
-        width: 100%;
+        gap: 2rem;
     }
 
-    html body .field {
-        width: 100%;
+    .field label {
+        margin-bottom: 0.75rem;
+    }
+   
+    .bottom-section {
+        margin-top: 2rem;
     }
 
-    html body .field label {
-        font-size: 16px;
-        margin-bottom: 12px;
-    }
-
-    html body .field input {
-        width: 100%;
-    }
-
-    html body .bottom-section {
-        margin-top: 32px;
-        width: 100%;
-    }
-
-    html body .privacy-container {
+    .privacy-container {
         justify-content: flex-start;
-        font-size: 11px;
-        gap: 8px;
-        width: 100%;
+        font-size: 0.75rem; /* 12px */
+        gap: 0.5rem;
     }
 
-    html body .privacy-container input[type="checkbox"] {
+    .privacy-container input[type="checkbox"] {
         flex-shrink: 0;
     }
 }
