@@ -393,6 +393,7 @@ h4,
     margin-top: 0.5rem;
 }
 
+
 /* =========================================================
     6. Slider Component
 ========================================================= */
@@ -575,13 +576,15 @@ details[open] summary::after {
     transform: rotate(180deg);
 }
 
-@media screen and (min-width: 900px) and (max-width: 1300px) {
+@media screen and (min-width: 1040px) and (max-width: 1300px) {
     .faq-section details {
         width: 800px;
     }
 }
 
-@media screen and (min-width: 540px) and (max-width: 899px) {
+@media screen and (min-width: 540px) and (max-width: 1039px) {
+    
+    
     .faq-section details {
         width: 500px;
     }
@@ -718,7 +721,6 @@ input:focus {
     padding-top: 40px;
 
 }
-
 
 /* =========================================================
    9. Footer Components (Desktop Standard)
