@@ -926,15 +926,7 @@ summary.share-btn:hover {
         height: 32px;
         /* Slightly smaller for mobile */
     }
-
-
-    /* Mobile Footer Adjustments */
-
-    /* Adds bottom padding to the body so content isn't hidden behind the sticky footer */
-    body {
-        padding-bottom: 88px;
-    }
-
+    
     /* Border Control Section  */
     .intro-content,
     .author-card,

@@ -909,8 +909,4 @@ input:focus {
         height: clamp(200px, 35vw, 260px);
     }
 
-    body {
-        padding-bottom: 88px;
-    }
-
 }
