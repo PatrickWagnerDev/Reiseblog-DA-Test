@@ -113,7 +113,7 @@ li {
 }
 
 .nav-bar>a {
-    font-size: var(--font-base);
+    font-size: var(--font-lg);
     font-weight: bold;
     color: white;
 
