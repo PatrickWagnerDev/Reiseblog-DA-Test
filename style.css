@@ -1,11 +1,12 @@
 /* 1. Base Body Styles */
 body {
+    width: 100%;
+    margin: 0;
+    padding: 0;
     font-family: var(--font-body);
     color: var(--c-primary);
     line-height: 1.6;
-    display: flex;
-    justify-content: center;
-    /* Center align the whole page */
+
 }
 
 h1,
@@ -26,7 +27,6 @@ h4,
     background-color: var(--c-accent);
     color: white;
     padding: 1rem 1.5rem;
-    /* Top/Bottom 1rem, Left/Right 1.5rem */
     border-radius: 0.5rem;
     border: none;
     font-weight: 700;
@@ -43,14 +43,31 @@ h4,
     3. Header & Navigation
 ========================================================= */
 
-.header__container {
+
+.header {
+    width: 100%;
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 24px 96px;
+    
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 80px;
+
+    background-color: var(--c-primary);
+    box-sizing: border-box;
+}
+
+.header__container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 96px;
     display: flex;
     justify-content: space-between;
-    /* Pushes logo left, nav right */
     align-items: center;
+    box-sizing: border-box;
 }
 
 .header__logo {
@@ -86,17 +103,6 @@ h4,
 
 .float-airplane {
     animation: floatPlane 1.8s ease-in-out infinite alternate;
-}
-
-.header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    padding: 24px max(calc((100% - 1440px)/2), 96px);
-    gap: 102px;
-
-    background-color: var(--c-primary);
 }
 
 .header>img {
@@ -215,27 +221,24 @@ h4,
     width: 100%;
     min-height: clamp(450px, 50vh, 520px);
     overflow: hidden;
-    background-color: var(--c-secondary);
-    padding: 0 max(calc((100% - 1440px)/2), 88px);
+    background-color: transparent;
+    padding: 0;
 }
 
-/* --- 공통 타이틀 줄별 색상 규칙 --- */
+
 .title-line--india {
     color: var(--c-accent);
-    /* 1st: 오렌지 */
 }
 
 .title-line--europe {
     color: var(--c-buttonpoint);
-    /* 2nd: 옐로우(골드) */
 }
 
 .title-line--seoul {
     color: var(--c-primary);
-    /* 3rd: 네이비 */
 }
 
-/* 1. 인트로 애니메이션 텍스트 */
+
 .hero__intro-text {
     position: absolute;
     top: 50%;
@@ -277,11 +280,13 @@ h4,
     animation-delay: 1.9s;
 }
 
-/* 2. 히어로 카드 영역 */
+
 .hero__card {
     display: grid;
     grid-template-columns: 2fr 3fr;
+    max-width: 1440px;
     width: 100%;
+    margin: 0 auto;
     min-height: clamp(450px, 50vh, 520px);
     background-color: var(--c-secondary);
     overflow: hidden;
@@ -720,13 +725,20 @@ input:focus {
 ========================================================= */
 
 .footer {
+    width: 100%;
+    background-color: var(--c-primary);
+    padding: 48px 0;
+}
+
+.footer__container {
+    max-width: 1440px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 88px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 48px max(calc((100% - 1440px)/2), 88px);
-
-    background-color: var(--c-primary);
+    box-sizing: border-box;
 }
 
 .footer-nav {

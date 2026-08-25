@@ -3,11 +3,9 @@ body {
     background-color: var(--c-secondary);
     font-family: var(--font-body);
     color: var(--c-primary);
-    line-height: 1.6;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Centers the main page wrapper */
+    line-height: 1.4;
+    margin: 0;
+    width: 100%;
 }
 
 /* Apply specific fonts to headings */
@@ -19,13 +17,12 @@ h4,
     font-family: var(--font-heading);
 }
 
-/* Main wrapper constraining the max width of the website */
-.page-wrapper {
+.main-wrapper {
     width: 100%;
     max-width: 1440px;
+    margin: 0 auto;
     background-color: #FFFFFF;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
-    /* Adds a soft drop shadow */
 }
 
 h2 {
@@ -46,14 +43,14 @@ li {
 /* =========================================================
    2. Header & Navigation (Desktop)
 ========================================================= */
-.header__container {
+.header-content {
     max-width: 1440px;
     margin: 0 auto;
-    padding: 0 1rem;
+    padding: 24px 96px;
     display: flex;
-    justify-content: space-between;
-    /* Pushes logo left, nav right */
+    justify-content: flex-start;
     align-items: center;
+    gap: 80px;
 }
 
 .header__logo {
@@ -92,13 +89,7 @@ li {
 }
 
 .header {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-
-    padding: 24px max(calc((100% - 1440px)/2), 96px);
-    gap: 102px;
-
+    width: 100%;
     background-color: var(--c-primary);
 }
 
@@ -218,8 +209,7 @@ li {
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    padding: 0 1.5rem;
-    /* Adds padding so content doesn't touch the screen edge */
+    padding: 2rem 1.5rem;
 }
 
 /* CSS Grid layout for intro text and author card */
@@ -305,15 +295,13 @@ li {
 }
 
 .author-img {
-    width: 5.5rem;
-    height: 5.5rem;
+    width: 120px;
+    height: 120px;
     border-radius: 50%;
     /* Makes the image a perfect circle */
-    background-color: var(--c-buttonpoint);
     margin-bottom: 1rem;
     object-fit: cover;
     /* Ensures the image doesn't stretch */
-    border: 0.2rem solid var(--c-accent);
 }
 
 .author-name {
@@ -496,7 +484,6 @@ li {
     position: relative;
     width: 100%;
     padding-bottom: 56.25%;
-    /* 16:9 비율 유지 */
     height: 0;
     overflow: hidden;
     border-radius: 0.5rem 3.5rem 0.5rem 0.5rem;
@@ -672,13 +659,17 @@ summary.share-btn:hover {
 ========================================================= */
 
 .footer {
+    width: 100%;
+    background-color: var(--c-primary);
+}
+
+.footer-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 48px 88px;
     display: flex;
     justify-content: space-between;
     align-items: center;
-
-    padding: 48px max(calc((100% - 1440px)/2), 88px);
-
-    background-color: var(--c-primary);
 }
 
 .footer-nav {
