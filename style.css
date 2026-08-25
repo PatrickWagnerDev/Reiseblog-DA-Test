@@ -328,7 +328,7 @@ h4,
 .hero__img {
     width: 100%;
     height: 100%;
-    background-image: url('../assets/image/hero-img.jpeg');
+    background-image: url('./assets/image/hero-img.jpeg');
     background-size: cover;
     background-position: top center;
     transform: translateX(100%);
@@ -450,15 +450,15 @@ a.slider__slide:hover::before {
 }
 
 .slider__slide--one {
-    background-image: url("../assets/image/home-slider01.jpeg");
+    background-image: url("./assets/image/home-slider01.jpeg");
 }
 
 .slider__slide--two {
-    background-image: url("../assets/image/home-slider02.jpeg");
+    background-image: url("./assets/image/home-slider02.jpeg");
 }
 
 .slider__slide--three {
-    background-image: url("../assets/image/home-slider03.jpeg");
+    background-image: url("./assets/image/home-slider03.jpeg");
 }
 
 .slider__text {
@@ -566,7 +566,7 @@ summary::-webkit-details-marker {
 }
 
 summary::after {
-    content: url("assets/image/arrow_forward_ios.svg");
+    content: url("../assets/image/arrow_forward_ios.svg");
     transition: transform 255ms ease-in;
 }
 
