@@ -1,3 +1,4 @@
+/* 1. Base Body Styles */
 body {
     background-color: var(--c-secondary);
     font-family: var(--font-body);
@@ -17,7 +18,7 @@ h4,
 }
 
 /* =========================================================
-    2. Common Elements (Buttons, Containers) // Creator: Jin
+    2. Common Elements (Buttons, Containers)
 ========================================================= */
 /* White canvas wrapper for the entire page */
 .page-wrapper {
@@ -48,9 +49,9 @@ h4,
 }
 
 /* =========================================================
-    3. Header & Navigation // Creator: Jin
+    3. Header & Navigation
 ========================================================= */
-.header {
+/* .header {
     background-color: var(--c-primary);
     padding: 0.5rem 0;
 }
@@ -74,7 +75,6 @@ h4,
     text-decoration: none;
 }
 
-
 .logo-container {
     position: relative;
     width: 4rem;
@@ -91,7 +91,6 @@ h4,
     height: 100%;
     object-fit: contain;
 }
-
 
 .rotate-circle {
     animation: rotateGlobe 8s linear infinite;
@@ -124,7 +123,6 @@ h4,
 .nav {
     display: flex;
     gap: 2rem;
-    /* Spacing between nav links */
     align-items: center;
 }
 
@@ -135,17 +133,182 @@ h4,
     font-weight: 600;
     font-size: var(--font-base);
     transition: color 0.2s ease;
-    /* Smooth color change on hover */
 }
 
 .nav__link:hover {
     color: var(--c-buttonpoint);
-    /* Changes to gold on hover */
     text-decoration: underline;
 }
 
+*/
+
+.header__container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    justify-content: space-between;
+    /* Pushes logo left, nav right */
+    align-items: center;
+}
+
+.header__logo {
+    color: white;
+    font-size: var(--font-lg);
+    font-weight: 800;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    text-decoration: none;
+}
+
+.logo-container {
+    position: relative;
+    width: 4rem;
+    height: 4rem;
+    perspective: 500px;
+    flex-shrink: 0;
+}
+
+.logo-container img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.rotate-circle {
+    animation: rotateGlobe 8s linear infinite;
+}
+
+.float-airplane {
+    animation: floatPlane 1.8s ease-in-out infinite alternate;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
+    gap: 102px;
+
+    background-color: var(--c-primary);
+}
+
+.header>img {
+    height: 72px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 72px;
+}
+
+.nav-bar>a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+.nav-highlights,
+.nav-faq,
+.nav-contact {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-highlights::after,
+.nav-faq::after,
+.nav-contact::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 105%;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-highlights:hover::after,
+.nav-faq:hover::after,
+.nav-contact:hover::after {
+    opacity: 1;
+}
+
+.nav-highlights::after {
+    background-image: url('../assets/icon/underline_highlights.png');
+}
+
+.nav-faq::after {
+    background-image: url('../assets/icon/underline_faq.png');
+}
+
+.nav-contact::after {
+    background-image: url('../assets/icon/underline_contact.png');
+}
+
+.nav-bar a:active::after {
+    opacity: 0;
+}
+
+.nav-bar a:active {
+    color: #F1C953;
+}
+
+@keyframes rotateGlobe {
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
+}
+
+@keyframes floatPlane {
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
+}
+
+@media screen and (min-width: 744px) and (max-width: 850px) {
+
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+    }
+
+}
+
+@media screen and (max-width: 743px) {
+
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+        justify-content: center;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
+}
+
+
 /* =========================================================
-    4. Hero Section - Sequence Animation // Creator: Jin
+    4. Hero Section - Sequence Animation
 ========================================================= */
 .hero {
     position: relative;
@@ -155,6 +318,23 @@ h4,
     overflow: hidden;
 }
 
+/* --- 공통 타이틀 줄별 색상 규칙 --- */
+.title-line--india {
+    color: var(--c-accent);
+    /* 1st: 오렌지 */
+}
+
+.title-line--europe {
+    color: var(--c-buttonpoint);
+    /* 2nd: 옐로우(골드) */
+}
+
+.title-line--seoul {
+    color: var(--c-primary);
+    /* 3rd: 네이비 */
+}
+
+/* 1. 인트로 애니메이션 텍스트 */
 .hero__intro-text {
     position: absolute;
     top: 50%;
@@ -170,9 +350,8 @@ h4,
     text-align: center;
     font-family: var(--font-heading);
 
-    font-size: clamp(1.2rem, 3.2vw + 0.5rem, 2.5rem);
+    font-size: var(--font-xxxl);
     font-weight: 700;
-    color: var(--c-primary);
     z-index: 10;
     animation: fadeOutIntro 0.5s ease-in-out 3.2s forwards;
 }
@@ -197,6 +376,7 @@ h4,
     animation-delay: 1.9s;
 }
 
+/* 2. 히어로 카드 영역 */
 .hero__card {
     display: grid;
     grid-template-columns: 2fr 3fr;
@@ -204,7 +384,6 @@ h4,
     min-height: clamp(450px, 50vh, 520px);
     background-color: var(--c-secondary);
 }
-
 
 .hero__content {
     padding: clamp(1.5rem, 4vw, 4rem) clamp(1.2rem, 3vw, 3rem);
@@ -215,9 +394,8 @@ h4,
     z-index: 2;
 }
 
-
 .hero__title {
-    font-size: clamp(1.3rem, 2.8vw + 0.5rem, 2.5rem);
+    font-size: var(--font-xxl);
     font-weight: 900;
     margin-bottom: 1rem;
     line-height: 1.2;
@@ -226,15 +404,13 @@ h4,
     animation: slideInLeft 0.8s ease-out 3.8s forwards;
 }
 
-
 .hero__desc {
-    font-size: clamp(0.875rem, 1vw + 0.5rem, 1rem);
+    font-size: var(--font-base);
     margin-bottom: 1.5rem;
     opacity: 0;
     transform: translateX(-40px);
     animation: slideInLeft 0.8s ease-out 4.1s forwards;
 }
-
 
 .hero__content .btn--primary {
     align-self: flex-start;
@@ -253,14 +429,12 @@ h4,
     animation: slideInRight 1s cubic-bezier(0.25, 1, 0.5, 1) 3.5s forwards;
 }
 
-
 @keyframes fadeInUpLine {
     to {
         opacity: 1;
         transform: translateY(0);
     }
 }
-
 
 @keyframes fadeOutIntro {
     to {
@@ -269,13 +443,11 @@ h4,
     }
 }
 
-
 @keyframes slideInRight {
     to {
         transform: translateX(0);
     }
 }
-
 
 @keyframes slideInLeft {
     to {
@@ -283,7 +455,6 @@ h4,
         transform: translateX(0);
     }
 }
-
 
 @keyframes fadeInUp {
     to {
@@ -293,49 +464,7 @@ h4,
 }
 
 /* =========================================================
-                    Media Quary // Creator: Jin
-========================================================= */
-
-@media (max-width: 768px) {
-    .hero__intro-text {
-        top: clamp(220px, 38vh, 260px);
-    }
-
-    .hero__card {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto auto;
-    }
-
-    .hero__content {
-        order: 2;
-        padding: clamp(1.8rem, 4vw, 2.5rem) 1.5rem;
-        text-align: center;
-        align-items: center;
-    }
-
-    .hero__title {
-        margin-bottom: 0.8rem;
-    }
-
-    .hero__desc {
-        max-width: 500px;
-        margin-bottom: 1.5rem;
-    }
-
-    .hero__content .btn--primary {
-        align-self: center;
-    }
-
-    .hero__img {
-        order: 1;
-        height: clamp(200px, 35vw, 260px);
-    }
-}
-
-
-
-/* =========================================================
-    5. Main Content (Center-aligned content area) // Creator: Jin
+    5. Main Content (Center-aligned content area)
 ========================================================= */
 .main-content {
     max-width: 1200px;
@@ -358,7 +487,7 @@ h4,
 }
 
 /* =========================================================
-    6. Slider Component // Creator: Jin
+    6. Slider Component
 ========================================================= */
 .slider {
     position: relative;
@@ -393,7 +522,6 @@ h4,
     transition: transform 0.3s ease, filter 0.3s ease;
 }
 
-
 a.slider__slide {
     cursor: pointer;
 }
@@ -404,7 +532,6 @@ a.slider__slide:hover .slider__title {
 }
 
 a.slider__slide:hover::before {
-
     background: linear-gradient(to top, rgba(17, 29, 74, 0.95) 0%, transparent 70%);
 }
 
@@ -479,168 +606,9 @@ a.slider__slide:hover::before {
     border-radius: 0.5rem;
 }
 
-/* =========================================================
-   8. Footer Components (Desktop Standard) // Creator: Jin
-========================================================= */
-.footer {
-    background-color: var(--c-primary);
-    color: white;
-    padding: 1.5rem 0;
-}
-
-.footer__container {
-    width: 100%;
-    max-width: 1440px;
-    margin: 0 auto;
-    padding: 0 2.5rem;
-    display: flex;
-    justify-content: space-between;
-    /* Aligns text left, icons right */
-    align-items: center;
-}
-
-.footer__text-group {
-    display: flex;
-    gap: 1.5rem;
-    align-items: center;
-}
-
-.footer__link {
-    color: white;
-    text-decoration: none;
-    font-size: var(--font-base);
-}
-
-.footer__links {
-    display: flex;
-    gap: 0.5rem;
-}
-
-/* Hide the mobile sticky footer by default on Desktop */
-.footer--mobile {
-    display: none;
-}
-
-
-
-@media (max-width: 768px) {
-
-    html {
-        font-size: 87.5%;
-    }
-
-    .header {
-        padding: 0;
-    }
-
-    .header__container {
-        justify-content: center;
-        padding: 0 1rem;
-        height: 70px;
-    }
-
-
-    .nav {
-        display: none;
-    }
-
-    .header__logo-img {
-        width: 3.5rem;
-        height: 3.5rem;
-        object-fit: contain;
-    }
-
-    .header__logo span {
-        display: none;
-    }
-
-    .header__container {
-        justify-content: center;
-        padding: 0 1rem;
-    }
-
-
-    .hero__intro-text {
-        top: clamp(220px, 38vh, 260px);
-    }
-
-    body {
-        padding-bottom: 88px;
-    }
-
-    /* Standard footer changes to vertical stacking on mobile */
-    .footer {
-        padding: 2rem 1.5rem;
-    }
-
-    .footer__container {
-        display: flex !important;
-        flex-direction: row !important;
-        justify-content: space-between;
-        align-items: flex-end;
-        width: 100%;
-        padding: 0;
-    }
-
-    .footer__text-group {
-        display: flex;
-        flex-direction: column;
-        /* Stacks text links vertically */
-        align-items: flex-start;
-        gap: 0.4rem;
-    }
-
-    .footer__copyright {
-        order: 3;
-    }
-
-    .footer__link {
-        font-size: 0.95rem;
-    }
-
-    .footer__links {
-        display: flex;
-        flex-direction: row;
-        gap: 0.75rem;
-        align-items: center;
-    }
-
-    .footer__links img {
-        width: 28px;
-        height: 28px;
-    }
-
-    /* Un-hiding the Sticky Mobile App-like Bottom Navigation */
-    .footer--mobile {
-        display: flex !important;
-        position: fixed;
-        bottom: 0;
-        left: 0;
-        right: 0;
-        width: 100%;
-        height: 88px;
-        background-color: var(--c-buttonpoint);
-        z-index: 9999;
-        /* Ensures the footer stays on top of all other content */
-    }
-
-    .mobile-nav {
-        display: flex;
-        justify-content: space-around;
-        /* Distributes icons evenly */
-        align-items: center;
-        width: 100%;
-        padding: 0 1rem;
-    }
-
-    .mobile-nav__item img {
-        width: 32px;
-        height: 32px;
-    }
-}
 
 /* =========================================================
-   10. FAQ - Detaillist // Creator: Patrick
+   7. FAQ - Detaillist // Creator: Patrick
 ========================================================= */
 
 .faq-section {
@@ -715,5 +683,185 @@ details[open] summary::after {
 @media screen and (max-width: 539px) {
     .faq-section details {
         width: 300px;
+    }
+}
+
+/* =========================================================
+   8. Footer Components (Desktop Standard)
+========================================================= */
+.footer {
+    background-color: var(--c-primary);
+    color: white;
+    padding: 1.5rem 0;
+}
+
+.footer__container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 2.5rem;
+    display: flex;
+    justify-content: space-between;
+    /* Aligns text left, icons right */
+    align-items: center;
+}
+
+.footer__text-group {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+}
+
+.footer__link {
+    color: white;
+    text-decoration: none;
+    font-size: var(--font-base);
+}
+
+.footer__links {
+    display: flex;
+    gap: 0.5rem;
+}
+
+/* Hide the mobile sticky footer by default on Desktop */
+.footer--mobile {
+    display: none;
+}
+
+/* =========================================================
+   9. Media Query (Mobile Screens)
+========================================================= */
+@media (max-width: 768px) {
+
+    /* .header {
+        padding: 0;
+    }
+
+    .header__container {
+        justify-content: center;
+        padding: 0 1rem;
+        height: 70px;
+    }
+
+    .nav {
+        display: none;
+    }
+
+    .header__logo-img {
+        width: 3.5rem;
+        height: 3.5rem;
+        object-fit: contain;
+    }
+
+    .header__logo span {
+        display: none;
+    } */
+
+    .hero__intro-text {
+        top: clamp(220px, 38vh, 260px);
+    }
+
+    .hero__card {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto;
+    }
+
+    .hero__content {
+        order: 2;
+        padding: clamp(1.8rem, 4vw, 2.5rem) 1.5rem;
+        text-align: center;
+        align-items: center;
+    }
+
+    .hero__title {
+        margin-bottom: 0.8rem;
+    }
+
+    .hero__desc {
+        max-width: 500px;
+        margin-bottom: 1.5rem;
+    }
+
+    .hero__content .btn--primary {
+        align-self: center;
+    }
+
+    .hero__img {
+        order: 1;
+        height: clamp(200px, 35vw, 260px);
+    }
+
+    body {
+        padding-bottom: 88px;
+    }
+
+    /* Standard footer changes to vertical stacking on mobile */
+    .footer {
+        padding: 2rem 1.5rem;
+    }
+
+    .footer__container {
+        display: flex !important;
+        flex-direction: row !important;
+        justify-content: space-between;
+        align-items: flex-end;
+        width: 100%;
+        padding: 0;
+    }
+
+    .footer__text-group {
+        display: flex;
+        flex-direction: column;
+        /* Stacks text links vertically */
+        align-items: flex-start;
+        gap: 0.4rem;
+    }
+
+    .footer__copyright {
+        order: 3;
+    }
+
+    .footer__link {
+        font-size: 0.95rem;
+    }
+
+    .footer__links {
+        display: flex;
+        flex-direction: row;
+        gap: 0.75rem;
+        align-items: center;
+    }
+
+    .footer__links img {
+        width: 28px;
+        height: 28px;
+    }
+
+    /* Un-hiding the Sticky Mobile App-like Bottom Navigation */
+    .footer--mobile {
+        display: flex !important;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        width: 100%;
+        height: 88px;
+        background-color: var(--c-buttonpoint);
+        z-index: 9999;
+        /* Ensures the footer stays on top of all other content */
+    }
+
+    .mobile-nav {
+        display: flex;
+        justify-content: space-around;
+        /* Distributes icons evenly */
+        align-items: center;
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .mobile-nav__item img {
+        width: 32px;
+        height: 32px;
     }
 }
