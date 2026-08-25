@@ -47,10 +47,6 @@ li {
 /* =========================================================
    2. Header & Navigation (Desktop)
 ========================================================= */
-.header {
-    background-color: var(--c-primary);
-    padding: 0.5rem 0;
-}
 
 .header__container {
     max-width: 1440px;
@@ -62,7 +58,6 @@ li {
     align-items: center;
 }
 
-
 .header__logo {
     color: white;
     font-size: var(--font-lg);
@@ -72,7 +67,6 @@ li {
     gap: 0.75rem;
     text-decoration: none;
 }
-
 
 .logo-container {
     position: relative;
@@ -91,13 +85,90 @@ li {
     object-fit: contain;
 }
 
-
 .rotate-circle {
     animation: rotateGlobe 8s linear infinite;
 }
 
 .float-airplane {
     animation: floatPlane 1.8s ease-in-out infinite alternate;
+}
+
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
+    gap: 102px;
+
+    background-color: var(--c-primary);
+}
+
+.header>img {
+    height: 72px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 72px;
+}
+
+.nav-bar>a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+.nav-highlights,
+.nav-faq,
+.nav-contact {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-highlights::after,
+.nav-faq::after,
+.nav-contact::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 105%;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-highlights:hover::after,
+.nav-faq:hover::after,
+.nav-contact:hover::after {
+    opacity: 1;
+}
+
+.nav-highlights::after {
+    background-image: url('../assets/icon/underline_highlights.png');
+}
+
+.nav-faq::after {
+    background-image: url('../assets/icon/underline_faq.png');
+}
+
+.nav-contact::after {
+    background-image: url('../assets/icon/underline_contact.png');
+}
+
+.nav-bar a:active::after {
+    opacity: 0;
+}
+
+.nav-bar a:active {
+    color: #F1C953;
 }
 
 @keyframes rotateGlobe {
@@ -120,30 +191,26 @@ li {
     }
 }
 
-/* Navigation Menu */
-.nav {
-    display: flex;
-    gap: 2rem;
-    /* Spacing between nav links */
-    align-items: center;
+@media screen and (min-width: 744px) and (max-width: 850px) {
+
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+    }
+
 }
 
-.nav__link,
-.nav__link:visited {
-    color: #FFFFFF;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: var(--font-base);
-    transition: color 0.2s ease;
-    /* Smooth color change on hover */
-}
+@media screen and (max-width: 743px) {
 
-.nav__link:hover {
-    color: var(--c-buttonpoint);
-    /* Changes to gold on hover */
-    text-decoration: underline;
-}
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+        justify-content: center;
+    }
 
+    .nav-bar {
+        display: none;
+    }
+
+}
 
 /* =========================================================
    3. Main Layout & Intro Grid
@@ -638,41 +705,6 @@ summary.share-btn:hover {
 ========================================================= */
 @media (max-width: 768px) {
 
-    /* Mobile Header Layout (Logo Centered, Links Hidden) */
-    .header {
-        padding: 0;
-    }
-
-    .header__container {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 70px;
-        /* Fixed height for mobile header */
-        padding: 0 1rem;
-    }
-
-    .header__logo {
-        justify-content: center;
-        /* Hides the text, showing only the logo image */
-    }
-
-    .header__logo span {
-        display: none;
-    }
-
-    .header__logo-img {
-        width: 3.5rem;
-        height: 3.5rem;
-        object-fit: contain;
-    }
-
-    /* Hide the desktop navigation links entirely */
-    .nav {
-        display: none !important;
-    }
-
-
     /* Mobile Intro Grid: Changes from 2 columns to 1 column */
     .intro-grid {
         grid-template-columns: 1fr;
@@ -688,7 +720,6 @@ summary.share-btn:hover {
     .author-card {
         padding: 1.5rem;
     }
-
 
     /* Mobile Slider Transformation (Accordion -> Carousel) */
     .slider-wrap {
