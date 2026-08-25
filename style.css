@@ -51,10 +51,6 @@ h4,
 /* =========================================================
     3. Header & Navigation
 ========================================================= */
-.header {
-    background-color: var(--c-primary);
-    padding: 0.5rem 0;
-}
 
 .header__container {
     max-width: 1440px;
@@ -62,6 +58,7 @@ h4,
     padding: 0 1rem;
     display: flex;
     justify-content: space-between;
+    /* Pushes logo left, nav right */
     align-items: center;
 }
 
@@ -100,6 +97,84 @@ h4,
     animation: floatPlane 1.8s ease-in-out infinite alternate;
 }
 
+.header {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
+    gap: 102px;
+
+    background-color: var(--c-primary);
+}
+
+.header>img {
+    height: 72px;
+}
+
+.nav-bar {
+    display: flex;
+    gap: 72px;
+}
+
+.nav-bar>a {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white;
+
+    font-family: var(--font-heading);
+    text-decoration: none;
+}
+
+.nav-highlights,
+.nav-faq,
+.nav-contact {
+    position: relative;
+    text-decoration: none;
+}
+
+.nav-highlights::after,
+.nav-faq::after,
+.nav-contact::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 105%;
+    height: 24px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0;
+    transition: opacity 0.2s ease;
+}
+
+.nav-highlights:hover::after,
+.nav-faq:hover::after,
+.nav-contact:hover::after {
+    opacity: 1;
+}
+
+.nav-highlights::after {
+    background-image: url('../assets/icon/underline_highlights.png');
+}
+
+.nav-faq::after {
+    background-image: url('../assets/icon/underline_faq.png');
+}
+
+.nav-contact::after {
+    background-image: url('../assets/icon/underline_contact.png');
+}
+
+.nav-bar a:active::after {
+    opacity: 0;
+}
+
+.nav-bar a:active {
+    color: #F1C953;
+}
+
 @keyframes rotateGlobe {
     0% {
         transform: rotateY(0deg);
@@ -120,27 +195,25 @@ h4,
     }
 }
 
-.nav {
-    display: flex;
-    gap: 2rem;
-    /* Spacing between nav links */
-    align-items: center;
+@media screen and (min-width: 744px) and (max-width: 850px) {
+
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+    }
+
 }
 
-.nav__link,
-.nav__link:visited {
-    color: white;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: var(--font-base);
-    transition: color 0.2s ease;
-    /* Smooth color change on hover */
-}
+@media screen and (max-width: 743px) {
 
-.nav__link:hover {
-    color: var(--c-buttonpoint);
-    /* Changes to gold on hover */
-    text-decoration: underline;
+    .header {
+        padding: 24px max(calc((100% - 1440px)/2), 42px);
+        justify-content: center;
+    }
+
+    .nav-bar {
+        display: none;
+    }
+
 }
 
 /* =========================================================
@@ -565,30 +638,6 @@ details[open] summary::after {
    9. Media Query (Mobile Screens)
 ========================================================= */
 @media (max-width: 768px) {
-
-    .header {
-        padding: 0;
-    }
-
-    .header__container {
-        justify-content: center;
-        padding: 0 1rem;
-        height: 70px;
-    }
-
-    .nav {
-        display: none;
-    }
-
-    .header__logo-img {
-        width: 3.5rem;
-        height: 3.5rem;
-        object-fit: contain;
-    }
-
-    .header__logo span {
-        display: none;
-    }
 
     .hero__intro-text {
         top: clamp(220px, 38vh, 260px);
