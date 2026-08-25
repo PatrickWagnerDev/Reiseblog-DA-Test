@@ -1,6 +1,5 @@
 /* 1. Base Body Styles */
 body {
-    background-color: var(--c-secondary);
     font-family: var(--font-body);
     color: var(--c-primary);
     line-height: 1.6;
@@ -20,14 +19,6 @@ h4,
 /* =========================================================
     2. Common Elements (Buttons, Containers)
 ========================================================= */
-/* White canvas wrapper for the entire page */
-.page-wrapper {
-    width: 100%;
-    max-width: 1440px;
-    background-color: white;
-    box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
-    /* 2rem = 32px */
-}
 
 /* Common button style */
 .btn--primary {
@@ -223,8 +214,9 @@ h4,
     position: relative;
     width: 100%;
     min-height: clamp(450px, 50vh, 520px);
-    background-color: var(--c-buttonpoint);
     overflow: hidden;
+    background-color: var(--c-secondary);
+    padding: 0 max(calc((100% - 1440px)/2), 88px);
 }
 
 /* --- 공통 타이틀 줄별 색상 규칙 --- */
@@ -292,6 +284,7 @@ h4,
     width: 100%;
     min-height: clamp(450px, 50vh, 520px);
     background-color: var(--c-secondary);
+    overflow: hidden;
 }
 
 .hero__content {
@@ -907,10 +900,6 @@ input:focus {
     .hero__img {
         order: 1;
         height: clamp(200px, 35vw, 260px);
-    }
-
-    body {
-        padding-bottom: 88px;
     }
 
 }
