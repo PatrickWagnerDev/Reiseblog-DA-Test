@@ -744,12 +744,15 @@ details[open] summary::after {
 
     font-family: Arima, sans-serif;
     font-weight: bold;
-    font-size: 1.25rem; 
+    font-size: 2rem; 
     line-height: 1.2;
 
     color: var(--c-primary);
 }
 
+.heading{
+    font-size: var(--font-xl);
+}
 .Contact_row > img {
     width: 3rem;        
     height: 3rem;       
@@ -826,6 +829,18 @@ details[open] summary::after {
     color: #5a4e40;
 }
 
+.privacy-container a {
+    color: #4da693;            
+    text-decoration: none;
+    font-weight: 400;             
+    transition: font-weight 0.2s ease, color 0.2s ease; 
+}
+
+.privacy-container a:hover {
+    font-weight: 700;            
+    color: #3b8777;             
+}
+
 /* =========================================================
    Mobile Viewport Styles (768px and below) for Contact
 ========================================================= */
@@ -838,19 +853,29 @@ details[open] summary::after {
         box-sizing: border-box;
     }
     
-    .Contact_form {
-        padding-top: 3.75rem; /* 60px */
-        width: 100%;
-    }
-
     .Contact_row {
-        font-size: 1.125rem; 
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;            
+    margin-bottom: 16px; 
+}
 
-    .Contact_row > img {
-        width: 2rem;   /* 32px */
-        height: 2rem;  /* 32px */
-    }
+/* 2. 실제 글자가 들어있는 h2(.heading)에 직접 폰트 크기 지정 */
+.Contact_row .heading {
+    font-size: 1.5rem; /* 32px 정확히 적용 */
+    font-family: Arima, sans-serif;
+    font-weight: bold;
+    color: var(--c-primary);
+    line-height: 1.2;
+    margin: 0; /* h2 기본 여백 제거 */
+}
+
+/* 3. 아이콘 크기 */
+.Contact_row > img {
+    width: 3rem;        
+    height: 3rem;       
+}
     
     .sub_lines {
         display: none;
