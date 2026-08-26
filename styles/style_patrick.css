@@ -331,6 +331,7 @@ h3 {
 }
 
 .button-share {
+    cursor: pointer;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -814,6 +815,8 @@ h3 {
     .button-share img {
         height: 24px;
     }
+
+
 
     .button-share-alt p {
         font-size: 1.2rem;
