@@ -98,10 +98,8 @@ h3 {
     display: flex;
     justify-content: flex-start;
     align-items: center;
-
     padding: 24px max(calc((100% - 1440px)/2), 96px);
     gap: 102px;
-
     background-color: var(--c-primary);
 }
 
@@ -124,7 +122,6 @@ h3 {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
-
     font-family: var(--font-heading);
     text-decoration: none;
 }
@@ -230,12 +227,10 @@ h3 {
     background-color: var(--c-secondary);
     width: 480px;
     color: var(--c-primary);
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     padding: 40px;
     background-color: var(--c-secondary);
     border-radius: 0.5rem 3.5rem 0.5rem 0.5rem;
@@ -317,9 +312,7 @@ h3 {
     font-size: 2rem;
     text-align: center;
     gap: 40px;
-
     width: 650px;
-
     position: relative;
 }
 
@@ -344,7 +337,6 @@ h3 {
     gap: 16px;
     padding: 8px 24px;
     border-radius: 40px;
-
     background-color: var(--c-primary);
     color: #F1C953;
     font-size: 1.75rem;
@@ -358,7 +350,6 @@ h3 {
     align-items: center;
     justify-content: center;
     gap: 16px;
-
     display: none;
 }
 
@@ -369,7 +360,6 @@ h3 {
     gap: 16px;
     padding: 8px 24px;
     border-radius: 40px;
-
     background-color: var(--c-primary);
     color: #F1C953;
     font-size: 1.75rem;
@@ -398,16 +388,13 @@ h3 {
     display: flex;
     justify-content: space-between;
     align-items: center;
-
     padding: 48px max(calc((100% - 1440px)/2), 88px);
-
     background-color: var(--c-primary);
 }
 
 .footer-nav {
     display: flex;
     gap: 72px;
-
     color: white;
 }
 
@@ -467,14 +454,12 @@ h3 {
 
     .activity-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
 
     .accommodation-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
@@ -499,14 +484,12 @@ h3 {
 
     .activity-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
 
     .accommodation-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
@@ -550,14 +533,12 @@ h3 {
 
     .activity-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
 
     .accommodation-graph {
         align-items: center;
-
         width: 100%;
         height: 100%;
     }
@@ -641,7 +622,6 @@ h3 {
     .activity-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -649,7 +629,6 @@ h3 {
     .accommodation-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -706,9 +685,7 @@ h3 {
         justify-content: space-between;
         align-items: center;
         padding: 24px 42px;
-
         background-color: #F1C953;
-
         position: sticky;
         bottom: 0;
     }
@@ -803,7 +780,6 @@ h3 {
     .activity-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -811,7 +787,6 @@ h3 {
     .accommodation-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -868,9 +843,7 @@ h3 {
         justify-content: space-between;
         align-items: center;
         padding: 24px 42px;
-
         background-color: #F1C953;
-
         position: sticky;
         bottom: 0;
     }
@@ -969,7 +942,6 @@ h3 {
     .activity-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -977,7 +949,6 @@ h3 {
     .accommodation-graph {
         align-items: center;
         padding: 0;
-
         width: 100%;
         height: 100%;
     }
@@ -1044,9 +1015,7 @@ h3 {
         justify-content: space-between;
         align-items: center;
         padding: 16px 42px;
-
         background-color: #F1C953;
-
         position: sticky;
         bottom: 0;
     }
