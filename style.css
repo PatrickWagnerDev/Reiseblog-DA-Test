@@ -1,12 +1,33 @@
 /* 1. Base Body Styles */
+
+/* 1. html과 body에 화면 전체 높이 기준 부여 */
+html,
 body {
     width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
     color: var(--c-primary);
     line-height: 1.6;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main.page-wrapper,
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+footer,
+.footer {
+    margin-top: auto;
 }
 
 h1,
@@ -20,23 +41,37 @@ h4,
 /* =========================================================
     2. Common Elements (Buttons, Containers)
 ========================================================= */
+a.btn--primary,
+a.btn--primary:link,
+a.btn--primary:visited,
+a.btn--primary:hover,
+a.btn--primary:active {
+    color: var(--c-secondary);
+}
 
-/* Common button style */
-.btn--primary {
+a.btn--primary {
     display: inline-block;
     background-color: var(--c-accent);
-    color: white;
     padding: 1rem 1.5rem;
     border-radius: 0.5rem;
     border: none;
     font-weight: 700;
     font-size: var(--font-base);
     text-decoration: none;
-    cursor: default;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.btn--primary:hover {
-    opacity: 0.9;
+a.btn--primary:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+a.btn--primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 
@@ -53,7 +88,7 @@ h4,
     max-width: 1440px;
     margin: 0 auto;
     padding: 24px clamp(24px, 5vw, 96px);
-    
+
     display: flex;
     justify-content: flex-start;
     align-items: center;
@@ -101,7 +136,7 @@ h4,
     gap: clamp(32px, 4.5vw, 72px);
 }
 
-.nav-bar > a {
+.nav-bar>a {
     font-size: 1.5rem;
     font-weight: bold;
     color: white;
@@ -155,23 +190,33 @@ h4,
 
 
 @keyframes rotateGlobe {
-    0% { transform: rotateY(0deg); }
-    100% { transform: rotateY(360deg); }
+    0% {
+        transform: rotateY(0deg);
+    }
+
+    100% {
+        transform: rotateY(360deg);
+    }
 }
 
 @keyframes floatPlane {
-    0% { transform: translateY(0); }
-    100% { transform: translateY(-4px); }
+    0% {
+        transform: translateY(0);
+    }
+
+    100% {
+        transform: translateY(-4px);
+    }
 }
 
 @media screen and (max-width: 768px) {
     .header-content {
         padding: 16px 24px;
-        justify-content: center; 
+        justify-content: center;
     }
 
     .nav-bar {
-        display: none !important; 
+        display: none !important;
     }
 }
 
@@ -709,8 +754,8 @@ details[open] summary::after {
 }
 
 @media screen and (min-width: 540px) and (max-width: 1039px) {
-    
-    
+
+
     .faq-section details {
         width: 500px;
     }
@@ -739,23 +784,24 @@ details[open] summary::after {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;            
-    margin-bottom: 16px; 
+    gap: 8px;
+    margin-bottom: 16px;
 
     font-family: Arima, sans-serif;
     font-weight: bold;
-    font-size: 2rem; 
+    font-size: 2rem;
     line-height: 1.2;
 
     color: var(--c-primary);
 }
 
-.heading{
+.heading {
     font-size: var(--font-xl);
 }
-.Contact_row > img {
-    width: 3rem;        
-    height: 3rem;       
+
+.Contact_row>img {
+    width: 3rem;
+    height: 3rem;
 }
 
 .sub_lines {
@@ -791,7 +837,8 @@ details[open] summary::after {
 }
 
 .field label {
-    font-size: 1.125rem; /* 18px */
+    font-size: 1.125rem;
+    /* 18px */
     margin-bottom: 1.5rem;
 }
 
@@ -833,7 +880,7 @@ details[open] summary::after {
     color: #4da693;
     text-decoration: none;
     font-weight: 500;
-    cursor: pointer; 
+    cursor: pointer;
     transition: text-shadow 0.2s ease;
 }
 
@@ -852,35 +899,37 @@ details[open] summary::after {
         width: 100%;
         box-sizing: border-box;
     }
-    
+
     .Contact_row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 12px;            
-    margin-bottom: 16px; 
-}
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        margin-bottom: 16px;
+    }
 
-/* 2. 실제 글자가 들어있는 h2(.heading)에 직접 폰트 크기 지정 */
-.Contact_row .heading {
-    font-size: 1.5rem; /* 32px 정확히 적용 */
-    font-family: Arima, sans-serif;
-    font-weight: bold;
-    color: var(--c-primary);
-    line-height: 1.2;
-    margin: 0; /* h2 기본 여백 제거 */
-}
+    /* 2. 실제 글자가 들어있는 h2(.heading)에 직접 폰트 크기 지정 */
+    .Contact_row .heading {
+        font-size: 1.5rem;
+        /* 32px 정확히 적용 */
+        font-family: Arima, sans-serif;
+        font-weight: bold;
+        color: var(--c-primary);
+        line-height: 1.2;
+        margin: 0;
+        /* h2 기본 여백 제거 */
+    }
 
-/* 3. 아이콘 크기 */
-.Contact_row > img {
-    width: 3rem;        
-    height: 3rem;       
-}
-    
+    /* 3. 아이콘 크기 */
+    .Contact_row>img {
+        width: 3rem;
+        height: 3rem;
+    }
+
     .sub_lines {
         display: none;
     }
-  
+
     .questions-container {
         padding: 1.5rem 0 0 0;
         width: 100%;
@@ -895,14 +944,15 @@ details[open] summary::after {
     .field label {
         margin-bottom: 0.75rem;
     }
-   
+
     .bottom-section {
         margin-top: 2rem;
     }
 
     .privacy-container {
         justify-content: flex-start;
-        font-size: 0.75rem; /* 12px */
+        font-size: 0.75rem;
+        /* 12px */
         gap: 0.5rem;
     }
 
@@ -945,13 +995,13 @@ details[open] summary::after {
     color: white;
     text-decoration: none;
     font-size: var(--font-base);
+    min-width: 80px;
 }
 
 .footer-nav p {
     display: flex;
     align-items: center;
     gap: 0.5rem;
-    margin: 0;
 }
 
 .footer-nav img {
@@ -991,7 +1041,7 @@ details[open] summary::after {
 
 @media screen and (max-width: 768px) {
     body {
-        padding-bottom: 5.5rem; 
+        padding-bottom: 5.5rem;
     }
 
     .footer {
@@ -1002,7 +1052,7 @@ details[open] summary::after {
         padding: 0;
         display: flex;
         justify-content: space-between;
-        align-items: flex-end; 
+        align-items: flex-end;
     }
 
     .footer-nav {
@@ -1019,17 +1069,17 @@ details[open] summary::after {
         text-decoration: none;
     }
 
-   
+
     .footer-nav a:nth-of-type(1) {
         order: 1;
     }
 
-   
+
     .footer-nav a:nth-of-type(2) {
         order: 2;
     }
 
-  
+
     .footer-nav p {
         order: 3;
         font-size: 0.85rem;
@@ -1044,7 +1094,7 @@ details[open] summary::after {
         height: 1rem;
     }
 
-  
+
     .footer-links {
         display: flex;
         gap: 0.5rem;
@@ -1056,7 +1106,7 @@ details[open] summary::after {
         height: 1.5rem;
     }
 
-   
+
     .footer--mobile,
     .nav-bar-mobile {
         display: flex !important;
@@ -1286,5 +1336,4 @@ details[open] summary::after {
         height: clamp(200px, 35vw, 260px);
     }
 
-} 
-
+}
