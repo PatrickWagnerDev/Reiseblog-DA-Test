@@ -1,8 +1,12 @@
 /* 1. Base Body Styles */
+* {
+    box-sizing: border-box;
+}
 
 html,
 body {
     width: 100%;
+    overflow-x: hidden;
     min-height: 100vh;
     margin: 0;
     padding: 0;
@@ -21,8 +25,7 @@ main.page-wrapper,
     display: flex;
     flex-direction: column;
     flex: 1;
-    width: 100%;
-}
+    }
 
 footer,
 .footer {
@@ -223,7 +226,6 @@ a.btn--primary:active {
 ========================================================= */
 .hero {
     position: relative;
-    width: 100%;
     min-height: clamp(450px, 50vh, 520px);
     overflow: hidden;
     background-color: transparent;
@@ -525,7 +527,9 @@ a.slider__slide:hover::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 24px max(calc((100% - 1440px)/2), 96px);
+    width: 100%;
+    box-sizing: border-box;
+    padding: 24px clamp(16px, 5vw, 96px);
 }
 
 .faq-header {
@@ -543,11 +547,14 @@ a.slider__slide:hover::before {
 
 .faq-section details {
     background-color: var(--c-secondary);
-    width: 1200px;
+    width: 100%;      
+    max-width: min(1200px, 100%);
+    box-sizing: border-box;
     padding: 16px;
     margin-top: 16px;
     border-radius: 5px;
     text-align: start;
+    overflow-wrap: break-word;
 }
 
 .faq-section p {
@@ -563,6 +570,10 @@ summary {
     list-style: none;
     cursor: pointer;
     font-weight: bold;
+    gap: 12px;
+    min-width: 0;
+    overflow-wrap: break-word;
+    word-break: break-word;
 }
 
 summary::-webkit-details-marker {
@@ -576,26 +587,6 @@ summary::after {
 
 details[open] summary::after {
     transform: rotate(180deg);
-}
-
-@media screen and (min-width: 1040px) and (max-width: 1300px) {
-    .faq-section details {
-        width: 800px;
-    }
-}
-
-@media screen and (min-width: 540px) and (max-width: 1039px) {
-
-
-    .faq-section details {
-        width: 500px;
-    }
-}
-
-@media screen and (max-width: 539px) {
-    .faq-section details {
-        width: 300px;
-    }
 }
 
 /* =========================================================
@@ -738,7 +729,6 @@ details[open] summary::after {
         margin-bottom: 16px;
     }
 
-    /* 2. 실제 글자가 들어있는 h2(.heading)에 직접 폰트 크기 지정 */
     .Contact_row .heading {
         font-size: 1.5rem;
         /* 32px 정확히 적용 */
@@ -747,10 +737,8 @@ details[open] summary::after {
         color: var(--c-primary);
         line-height: 1.2;
         margin: 0;
-        /* h2 기본 여백 제거 */
     }
 
-    /* 3. 아이콘 크기 */
     .Contact_row>img {
         width: 3rem;
         height: 3rem;
@@ -794,9 +782,7 @@ details[open] summary::after {
 /* =========================================================
    Footer Components (Rem & Single Media Query System)
 ========================================================= */
-
 .footer {
-    width: 100%;
     background-color: var(--c-primary);
     color: white;
     padding: 3rem 0;
@@ -903,14 +889,15 @@ details[open] summary::after {
     }
 
     .footer-nav p {
-        order: 3;
-        font-size: 0.85rem;
-        margin: 0;
-        white-space: nowrap;
-        display: flex;
-        align-items: center;
-        gap: 0.3rem;
-    }
+    order: 3;
+    font-size: 0.85rem;
+    margin: 0;
+    white-space: normal; 
+    word-break: break-word; 
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
 
     .footer-nav p img {
         height: 1rem;
@@ -955,7 +942,7 @@ details[open] summary::after {
     }
 }
 
-/* /* =========================================================
+/* =========================================================
    9. Media Query (Mobile Screens)
 ========================================================= */
 @media (max-width: 768px) {
@@ -994,4 +981,50 @@ details[open] summary::after {
         height: clamp(200px, 35vw, 260px);
     }
 
+}
+
+@media screen and (max-width: 540px) {
+    .faq-section {
+        padding: 24px 16px !important;
+    }
+    .faq-section details {
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .main-content {
+        padding: 2rem 16px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    .Contact_form {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+    .questions-container {
+        padding: 24px 0 0 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+    }
+    .slider {
+        border-radius: 0.75rem;
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .slider__slide {
+        padding: 1.5rem;
+        height: 20rem;
+    }
+}
+
+@media screen and (max-width: 530px) {
+    html, body {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
+    .page-wrapper, main.page-wrapper {
+        width: 100%;
+        max-width: 100vw;
+        overflow-x: hidden;
+    }
 }
