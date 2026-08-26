@@ -290,7 +290,7 @@ a.btn--primary:active {
 .hero__card {
     display: grid;
     grid-template-columns: 2fr 3fr;
-    max-width: 1440px;
+    max-width: 1440px; 
     width: 100%;
     margin: 0 auto;
     min-height: clamp(450px, 50vh, 520px);
@@ -380,9 +380,11 @@ a.btn--primary:active {
     5. Main Content (Center-aligned content area)
 ========================================================= */
 .main-content {
-    max-width: 1200px;
+    max-width: 1200px; 
     margin: 0 auto;
     padding: 4rem 1.5rem;
+    width: 100%;
+    box-sizing: border-box;
 }
 
 .section-header {
@@ -403,11 +405,14 @@ a.btn--primary:active {
     6. Slider Component
 ========================================================= */
 .slider {
+    max-width: 1200px; 
+    width: 100%;
+    margin: 0 auto 4rem auto;
     position: relative;
     overflow: hidden;
     border-radius: 1.5rem;
     box-shadow: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.5);
-    margin-bottom: 4rem;
+    box-sizing: border-box;
 }
 
 .slider__input {
@@ -527,9 +532,7 @@ a.slider__slide:hover::before {
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 100%;
-    box-sizing: border-box;
-    padding: 24px clamp(16px, 5vw, 96px);
+    padding: 24px max(calc((100% - 1440px)/2), 96px);
 }
 
 .faq-header {
@@ -547,14 +550,11 @@ a.slider__slide:hover::before {
 
 .faq-section details {
     background-color: var(--c-secondary);
-    width: 100%;      
-    max-width: min(1200px, 100%);
-    box-sizing: border-box;
+    width: 1150px;
     padding: 16px;
     margin-top: 16px;
     border-radius: 5px;
     text-align: start;
-    overflow-wrap: break-word;
 }
 
 .faq-section p {
@@ -570,10 +570,6 @@ summary {
     list-style: none;
     cursor: pointer;
     font-weight: bold;
-    gap: 12px;
-    min-width: 0;
-    overflow-wrap: break-word;
-    word-break: break-word;
 }
 
 summary::-webkit-details-marker {
@@ -589,13 +585,33 @@ details[open] summary::after {
     transform: rotate(180deg);
 }
 
+@media screen and (min-width: 1040px) and (max-width: 1300px) {
+    .faq-section details {
+        width: 900px;
+    }
+}
+
+@media screen and (min-width: 540px) and (max-width: 1039px) {
+    
+    
+    .faq-section details {
+        width: 500px;
+    }
+}
+
+@media screen and (max-width: 539px) {
+    .faq-section details {
+        width: 300px;
+    }
+}
+
 /* =========================================================
    9. Contack Form
 ========================================================= */
 
 .Contact_form {
     padding-top: 120px;
-    max-width: 1200px;
+    max-width: 1100px; 
     width: 100%;
     margin: 0 auto;
     box-sizing: border-box;
@@ -635,7 +651,7 @@ details[open] summary::after {
 .questions-container {
     padding: 50px 30px 0px 30px;
     width: 100%;
-    max-width: 900px;
+    max-width: 1000px;
     display: flex;
     flex-direction: column;
     gap: 40px;
