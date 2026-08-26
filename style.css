@@ -40,22 +40,37 @@ h4,
 /* =========================================================
     2. Common Elements (Buttons, Containers)
 ========================================================= */
-.btn--primary {
+a.btn--primary,
+a.btn--primary:link,
+a.btn--primary:visited,
+a.btn--primary:hover,
+a.btn--primary:active {
+    color: var(--c-secondary);
+}
+
+a.btn--primary {
     display: inline-block;
     background-color: var(--c-accent);
-    color: white;
     padding: 1rem 1.5rem;
-    /* Top/Bottom 1rem, Left/Right 1.5rem */
     border-radius: 0.5rem;
     border: none;
     font-weight: 700;
     font-size: var(--font-base);
     text-decoration: none;
     cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: transform 0.2s ease, box-shadow 0.2s ease, filter 0.2s ease;
 }
 
-.btn--primary:hover {
-    opacity: 0.9;
+a.btn--primary:hover {
+    filter: brightness(0.9);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.25);
+}
+
+a.btn--primary:active {
+    transform: translateY(1px);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
 }
 
 
