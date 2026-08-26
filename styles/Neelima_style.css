@@ -184,6 +184,9 @@ li {
    3. Main Layout & Intro Grid
 ========================================================= */
 .container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -542,7 +545,7 @@ li {
 /* =========================================================
    7. Share Section
 ========================================================= */
-.share-section {
+/* .share-section {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -550,7 +553,6 @@ li {
     margin-top: 3rem;
     margin-bottom: 0;
     padding-bottom: 65px;
-    /* Share 버튼 클릭 시 아래로 열릴 영역을 미리 확보 */
     gap: 1.25rem;
 }
 
@@ -635,8 +637,168 @@ summary.share-btn:hover {
 
 .link-item.whatsapp {
     background-color: #25D366;
+} */
+
+.follow-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: var(--font-heading);
+    font-size: 2rem;
+    text-align: center;
+    gap: 40px;
+    width: 650px;
+    position: relative;
+    padding: 88px 0;
 }
 
+.follow-text {
+    font-size: var(--font-xl);
+    color: var(--c-primary);
+}
+
+.vector-share {
+    position: absolute;
+    top: 162px;
+    left: 32px;
+}
+
+.vector-share-alt {
+    display: none;
+}
+
+.button-share {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 24px;
+    border-radius: 40px;
+    background-color: var(--c-primary);
+    color: #F1C953;
+    font-size: 1.75rem;
+}
+
+.button-share:hover {
+    font-weight: bold;
+}
+
+.button-share-alt {
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    display: none;
+}
+
+.button-share-alt p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+    padding: 8px 24px;
+    border-radius: 40px;
+    background-color: var(--c-primary);
+    color: #F1C953;
+    font-size: 1.75rem;
+}
+
+.button-links {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    font-size: 1.2rem;
+}
+
+.button-links a {
+    color: var(--c-primary);
+}
+
+.follow-section:focus-within .button-share {
+    display: none;
+}
+
+.follow-section:focus-within .button-share-alt {
+    display: flex;
+}
+
+@media screen and (min-width: 526px) and (max-width: 743px) {
+    .follow-section {
+        width: 310px;
+    }
+
+    .follow-text {
+        font-size: var(--font-lg);
+    }
+
+    .vector-share {
+        display: none;
+    }
+
+    .vector-share-alt {
+        display: flex;
+        position: absolute;
+        top: 180px;
+        left: 0;
+    }
+
+    .button-share {
+        font-size: 1.2rem;
+    }
+
+    .button-share img {
+        height: 24px;
+    }
+
+    .button-share-alt p {
+        font-size: 1.2rem;
+    }
+
+    .button-links {
+        font-size: 1rem;
+    }
+}
+
+@media screen and (max-width: 525px) {
+    .follow-section {
+        width: 280px;
+    }
+
+    .follow-text {
+        font-size: var(--font-lg);
+    }
+
+    .vector-share {
+        display: none;
+    }
+
+    .vector-share-alt {
+        display: flex;
+        position: absolute;
+        top: 180px;
+        left: 0;
+    }
+
+    .button-share {
+        font-size: 1.1rem;
+    }
+
+    .button-share img {
+        height: 20px;
+    }
+
+    .button-share-alt p {
+        font-size: 1.1rem;
+    }
+
+    .button-share-alt img {
+        height: 20px;
+    }
+
+    .button-links {
+        font-size: 1rem;
+    }
+}
 
 /* =========================================================
    Footer Components (Rem & Single Media Query System)
@@ -1074,10 +1236,9 @@ summary.share-btn:hover {
     }
 
 
-    .share-img {
+    /* .share-img {
         height: 32px;
-        /* Slightly smaller for mobile */
-    }
+    } */
 }
 
 /* Border Control Section  */
