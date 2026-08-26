@@ -355,7 +355,7 @@ li {
     grid-template-columns: 2fr 1fr;
     /* Left column takes up 2 parts, right takes 1 part */
     gap: 1.5rem;
-    margin-top: 2rem;
+    margin-top: 0;
     margin-bottom: 4rem;
 }
 
@@ -644,7 +644,7 @@ li {
 ========================================================= */
 .tips-section {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     margin: 2.5rem auto 0;
     display: flex;
     flex-direction: column;
@@ -665,7 +665,7 @@ li {
 ========================================================= */
 .itinerary-section {
     width: 100%;
-    max-width: 900px;
+    max-width: 1200px;
     background-color: var(--c-secondary);
     border-radius: 0.5rem;
     border-left: 0.5rem solid var(--c-accent);
