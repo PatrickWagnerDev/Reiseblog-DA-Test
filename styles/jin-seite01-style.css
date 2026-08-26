@@ -193,7 +193,7 @@ li {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 2rem 1.5rem;
 }
@@ -204,7 +204,7 @@ li {
     grid-template-columns: 2fr 1fr;
     /* Left column takes up 2 parts, right takes 1 part */
     gap: 1.5rem;
-    margin-top: 0;
+    margin-top: 1rem;
     margin-bottom: 4rem;
 }
 
