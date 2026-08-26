@@ -1,12 +1,32 @@
 /* 1. Base Body Styles */
-body {
+
+/* 1. html과 body에 화면 전체 높이 기준 부여 */
+html, body {
     width: 100%;
+    min-height: 100vh;
     margin: 0;
     padding: 0;
     font-family: var(--font-body);
     color: var(--c-primary);
     line-height: 1.6;
+}
 
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+main.page-wrapper,
+.page-wrapper {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    width: 100%;
+}
+
+footer,
+.footer {
+    margin-top: auto;
 }
 
 h1,
@@ -20,9 +40,6 @@ h4,
 /* =========================================================
     2. Common Elements (Buttons, Containers)
 ========================================================= */
-
-/* Common button style */
-/* Common button style */
 .btn--primary {
     display: inline-block;
     background-color: var(--c-accent);
