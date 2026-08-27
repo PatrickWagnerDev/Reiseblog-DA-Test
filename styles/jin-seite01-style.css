@@ -24,6 +24,7 @@ h4,
     margin: 0 auto;
     background-color: #FFFFFF;
     box-shadow: 0 0 2rem rgba(0, 0, 0, 0.05);
+    min-height: calc(100vh - (112px + 129px));
 }
 
 h2 {

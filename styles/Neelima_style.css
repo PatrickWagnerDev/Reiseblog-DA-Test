@@ -14,6 +14,7 @@ main {
     margin: 0 auto;
     background-color: #ffffff; 
     box-sizing: border-box;
+    min-height: calc(100vh - (112px + 129px));
 }
 
 /* Apply specific fonts to headings */
