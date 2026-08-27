@@ -742,6 +742,7 @@ li {
     color: white;
     text-decoration: none;
     font-size: var(--font-base);
+    min-width: 80px;
 }
 
 .footer-nav p {
